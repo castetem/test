@@ -1,0 +1,162 @@
+<core:FragmentDefinition
+	xmlns:u="sap.ui.unified" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+        	
+	<Popover 
+		id="singleInput"
+		placement="Vertical"
+		showHeader="false"
+		showArrow="true"
+		beforeClose="beforeCloseDayCalendar"
+		afterClose="afterCloseDayCalendar"
+		afterOpen="afterOpenDayCalendar"
+		contentWidth="{= ${device>/isPhone} ? '100%' : '60%'}"
+		class="popup">
+		<content>
+			<Panel width="100%" class="panelDay backgroundSpaceWhite" backgroundDesign="Transparent">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<core:Icon id="iconClosePopoverDay" src="sap-icon://decline" size="1.2rem" press="onClosePopoverDay" class="sapUiSmallMarginEnd setPointer"/>
+					</Toolbar>
+				</headerToolbar>
+				<content> 
+					<MessageStrip
+						id="msgConfirmation"
+						type="Error"
+						showIcon="true"
+						showCloseButton="false"
+						visible="false">
+					</MessageStrip>
+					
+					<ScrollContainer 
+						height="220px"
+						horizontal="false" 
+						vertical="true"
+						class="sapUiTinyMarginTop">
+						<content>
+						
+							<VBox items="{path: 'mDay>/items'}" id="tableDayCalendar">
+								<Panel expandable="true" expanded="false" width="auto">
+									<headerToolbar>
+										<Toolbar>
+											<Label text="{= ${mDay>IdProject} ? ${mDay>IdProject} : ''}" class="tinyLabel"/>
+											<ToolbarSpacer/>
+											<Label text="{= ${mDay>RecordedHours} ? ${mDay>RecordedHours} +' HOURS' : ''}" class="tinyLabel"/>
+											<ToolbarSpacer/>
+											<Button icon="sap-icon://delete" press="onDeleteRow"/>
+										</Toolbar>
+									</headerToolbar>
+									<content>
+										<l:Grid defaultSpan="L12 M12 S12" class="phoneMargin0">
+											<l:content>
+												<VBox 
+													fitContainer="true"
+													alignItems="Stretch">
+													<Label text="PROJECT NUMBER" width="100%" class="tinyLabel"/>
+													<HBox alignItems="Center" class="cssSearchFieldAsInput" >
+														<SearchField
+															id="inpSearchProjectsPopover"
+															value="{= ${mDay>IdProject} ? ${mDay>IdProject} +' - '+${mDay>ProjectName} : ''}"
+															width="100%"
+															placeholder="Ex: EXT-000000-00000 (Enter at least 9 digits)"
+															enableSuggestions="false"
+															showSearchButton="false"
+															suggest="onSuggestProjects"
+															search="onSelectProject"
+															liveChange="onLiveChangeProjectPopover"
+															ariaDescribedBy="lnkInfoProject,lnkInfoWBS,inpSearchWBSPopover"
+															ariaLabelledBy="cmbTypesHoursPopover"
+															suggestionItems="{
+																path: 'TIMELABOR>/ProjectSet',
+																templateShareable:false
+															}">
+															<layoutData>
+																<FlexItemData growFactor="1" />
+															</layoutData>
+															<suggestionItems>
+																<SuggestionItem text="{= ${TIMELABOR>IdProject} +' - '+${TIMELABOR>ProjectName}}" key="{TIMELABOR>IdProject}" />
+															</suggestionItems>
+														</SearchField>
+														<Button icon="sap-icon://value-help" press="onShowPopoverTemplates" ariaDescribedBy="inpSearchProjectsPopover,inpSearchWBSPopover,inpHoursPopover" ></Button>
+													</HBox>
+													<Link text="Project info" id="lnkInfoProject" press="onOpenProjectInfoPopover" class="projectInfo" enabled="{= ${mDay>IdProject}.length > 0 }"/>
+												    <Link visible="false" id="lnkInfoWBS" text="Work Breakdown Structure" press="onOpenWBSInfo" class="projectInfo" enabled="false" />
+												</VBox>
+											</l:content>						
+										</l:Grid>
+										<l:Grid class="phoneMargin0">
+											<l:content>
+												<VBox 
+													fitContainer="true"
+													alignItems="Stretch">
+													<layoutData>
+														<l:GridData span="L8 M8 S8" />
+													</layoutData>
+													<Label text="TASK" width="100%" class="tinyLabel"/>
+													<HBox alignItems="Center" class="cssSearchFieldAsInput" >
+														<SearchField
+															id="inpSearchWBSPopover"
+															value="{= ${mDay>ProjTask} ? ${mDay>ProjTask} +' - '+${mDay>ProjTaskDesc} : ''}"
+															width="100%"
+															placeholder="Enter task id or name"
+															enableSuggestions="false"
+															showSearchButton="false"
+															suggest="onSuggestWBS"
+															search="onSelectWBS"
+															liveChange="onLiveChangeWBSPopover"
+															ariaDescribedBy="inpSearchProjectsPopover"
+															suggestionItems="{
+																path: 'TIMELABOR>/WBSListSet',
+																templateShareable:false
+															}">
+															<layoutData>
+																<FlexItemData growFactor="1" />
+															</layoutData>
+															<suggestionItems>
+																<SuggestionItem text="{= ${TIMELABOR>IdWBS} +' - '+${TIMELABOR>Description}}" key="{TIMELABOR>IdWBS}" />
+															</suggestionItems>
+														</SearchField>
+														<Button icon="sap-icon://value-help" press="onShowPopoverWBS" ariaDescribedBy="inpSearchWBSPopover,inpSearchProjectsPopover" ></Button>
+													 </HBox>
+												</VBox>	
+												<VBox 
+													fitContainer="true"
+													alignItems="Stretch">
+													<layoutData>
+														<l:GridData span="L4 M4 S4" />
+													</layoutData>
+													<items>
+														<Label text="HOURS/DAY" width="100%" class="tinyLabel" />
+														<Input 
+															id="inpHoursPopover" 
+															value="{mDay>RecordedHours}" 
+															liveChange="onValidateInputHours" 
+															type="Text" 
+															maxLength="2" 
+															class="hoursInput"
+															width="100%"/>
+													</items>
+												</VBox>	
+											</l:content>						
+										</l:Grid>
+									</content>
+								</Panel>
+							</VBox>
+						</content>
+					</ScrollContainer>
+
+					<HBox justifyContent="SpaceBetween" class="sapUiTinyMarginTop">
+						<Button id="btnAddRow" text="Add row" press="onAddRow" enabled="false" class="btnBorderBlue"/>
+						<Button id="btnFinish" text="Finish"  press="onSetDay" enabled="false" class="btnGreen"/>
+					</HBox>
+				</content>
+			</Panel>
+		</content>
+	</Popover>
+
+    
+</core:FragmentDefinition>

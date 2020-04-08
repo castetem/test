@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns:t="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Popover
+		id="popoverTemplates"
+		placement="Bottom"
+		initialFocus="input"
+		showHeader="false"
+		showArrow="false"
+		contentMinWidth="268px"
+		class="templateCombo">
+		<content>
+			<Panel id="pnlUserTemplates" expandable="true" expanded="false" headerText="My templates" width="auto" class="panelTemplates backgroundSpaceWhite sapUiResponsiveMargin">
+				<List
+					showSeparators="Inner"
+					noDataText="There is not templates"
+					mode="SingleSelectMaster"
+					includeItemInSelection="true" 
+					itemPress="onSelectMyTemplate"
+					class="myTemplates"
+					items="{
+						path: 'Templates>/results'
+					}">
+					<items class="padding20">
+						<CustomListItem class="noBorder padding0" type="Active">
+							<Text text="{Templates>IdProject} - {Templates>NameTemplate}"/>
+						</CustomListItem>
+					</items>
+				</List>
+			</Panel>
+			<Panel id="pnlPublicTemplates" expandable="true" expanded="false" headerText="Projects" width="auto" class="panelTemplates backgroundSpaceWhite sapUiResponsiveMargin" visible="{= ${GlobalVars>/UserWork/EeGroup} === 'S' ? false : true }">
+				<List     
+					showSeparators="Inner"
+					noDataText="There is not templates"
+					mode="SingleSelectMaster"
+					includeItemInSelection="true" 
+					itemPress="onSelectPublicTemplate"
+					class="myPublicTemplates"
+					items="{
+						path: 'PublicTemplates>/results'
+					}">
+					<items class="padding20">
+						<CustomListItem class="noBorder padding0" type="Active">
+							<Text text="{PublicTemplates>ProjectName}"/>
+						</CustomListItem>
+					</items>
+				</List>
+			</Panel>
+			<HBox justifyContent="Center">
+				<core:Icon	src="sap-icon://search" class="sapUiTinyMargin"/>
+				<Link text="Advanced search" press="onAdvancedSearch" class="sapUiTinyMarginTopBottom"/>
+			</HBox>
+		</content>
+	</Popover>
+</core:FragmentDefinition>

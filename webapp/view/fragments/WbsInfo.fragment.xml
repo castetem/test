@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns:t="sap.ui.table" 
+	xmlns:u="sap.ui.unified" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	
+    <Dialog 
+		type="Standard"
+		showHeader="false"
+		state="None"
+		draggable="true"
+		contentWidth="40%"
+		class="popup">
+		<customHeader>
+			<Toolbar class="sapUiContentPadding">
+				<Text text="Work Breakdown Structure" class="smallTextBoldBlue sapUiSmallMarginBegin"/>
+				<ToolbarSpacer />
+				<core:Icon src="sap-icon://decline" size="1.3rem" class="sapUiSmallMarginEnd setPointer" press="onCloseWBSInfo"/>
+			</Toolbar>
+		</customHeader>
+        <content>
+        	<Panel class="popup1">
+				<content>
+					<l:Grid defaultSpan="L12 M12 S12" class="sapUiSmallMarginBottom" >
+						<VBox>
+						   	<Tree id="Tree" items="{path: '/',
+						   	                   parameters : {
+							                     ountMode: 'Inline',
+							                     numberOfExpandedLevels: 1
+							            }}" mode="None">
+							    	<CustomTreeItem>
+									  <FlexBox alignItems="Start" width="100%">
+									    	<items>
+									    	<HBox>	
+									    	<VBox>	
+										 	  <Text text="{WBSID}" class="miniTitle sapUiTinyMarginEnd"/>
+										      <Text text="{Description}" class="projectInfoText sapUiTinyMarginEnd" />
+									        </VBox>
+									         <Button icon="sap-icon://workflow-tasks" visible="{= ${Assignment} === 'X'}"
+									                  tooltip="Register hours" press="onPressRegisterHours" />
+									        </HBox>
+										</items>
+								   	</FlexBox>
+								</CustomTreeItem>
+							</Tree>	
+						</VBox>
+					</l:Grid>
+				
+				</content>
+			</Panel>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

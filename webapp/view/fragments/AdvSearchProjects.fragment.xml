@@ -1,0 +1,144 @@
+<core:FragmentDefinition
+	xmlns:t="sap.ui.table" 
+	xmlns:u="sap.ui.unified" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+
+	<Dialog id="advancedSearch"
+		type="Standard"
+		showHeader="true"
+		state="None"
+		draggable="true"
+		contentWidth="80%" 
+		afterOpen="init"
+		class="popup">		
+		<customHeader>
+			<Toolbar class="sapUiContentPadding">
+				<Text text="Project Advanced Search" class="smallTextBoldBlue sapUiSmallMarginBegin"></Text>
+				<ToolbarSpacer />
+				<core:Icon src="sap-icon://decline" class="sapUiSmallMarginEnd setPointer" size="1.3rem" press="onCloseAdvSearchProjects"/>
+			</Toolbar>
+		</customHeader>
+        <content>   
+        	<Panel>
+				<content>
+		        	<VBox class="sapUiSmallMargin phoneMargin0">
+						<!-- Filtros -->
+						<l:Grid defaultSpan="L4 M4 S12" vSpacing="0" hSpacing="0.5" >
+							<l:content>
+	
+								<Label text="FILTERS">
+									<layoutData>
+										<l:GridData span="L12 M12 S12" />
+									</layoutData>
+								</Label>
+								<ComboBox
+			        				id="comboFilter"
+			        				width="100%"
+			        				placeholder="Select a filter"
+			        				selectionChange="onChangeField"
+			        				items="{
+										path: 'FilterModel>/Conditions'
+									}">
+									<core:Item key="{FilterModel>type}" text="{FilterModel>IdSelection}" enabled="{FilterModel>enabled}" />
+								</ComboBox>
+								<VBox id="boxFilterContainer" alignItems="Stretch" width="100%">
+									<!-- Se establece el input de forma dinamica en funcion del item del combo seleccionado -->
+									<Input placeholder="Filter detail" enabled="false" />
+								</VBox>
+								<VBox>
+									<layoutData>
+										<l:GridData span="L2 M2 S6" />
+									</layoutData>
+									<Button id="btnAddFilter" text="Add Filter" enabled="false" class="btnBorderBlue btnAnchoTotal" press="onAddFilter" width="100%"/>
+								</VBox>
+								<VBox>
+									<layoutData>
+										<l:GridData span="L2 M2 S6" />
+									</layoutData>
+									<Button id="btnSearch" text="Search" enabled="false" class="btnGreen btnAnchoTotal" press="onAdvSearchProjects" width="100%"/>
+								</VBox>
+							</l:content>
+						</l:Grid>
+						<!-- Tags con los filtros -->
+						<HBox id="tagsContainer" wrap="Wrap" class="filter sapUiTinyMarginTop">
+							<!-- Se anyaden los tags desde el controlador de forma dinamica -->
+						</HBox>
+						
+						<VBox id="vboxResults" visible="false" class="sapUiTinyMarginBeginEnd">
+							<!-- Tabla de resultados -->
+							<Table
+								id="ProjectsTable"
+								items="{
+									path: '/results'
+								}"
+								mode="SingleSelectMaster"
+								selectionChange="onAdvSelectProject"
+								class="tableBlue sapUiMediumMarginTop">
+								<headerToolbar>
+									<Toolbar>
+										<VBox class="phoneToolbarTable searchUser sapUiTinyMarginBottom">
+											<Title text="Results" class="tinySmallTitle" />
+											<Text text="Showing {/pagFrom} - {/pagTo} of {/pagTotal}" />
+										</VBox>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column 
+									width="20%" 
+									demandPopin="false" 
+									hAlign="Center"
+									minScreenWidth="Tablet">
+										<Text text="Project Number"/>
+									</Column>
+									<Column 
+									width="20%" 
+									demandPopin="true" 
+									hAlign="Center">
+										<Text text="Project Name"/>
+									</Column>
+									<Column 
+									width="20%" 
+									demandPopin="true" 
+									hAlign="Center">
+										<Text text="Project Manager"/>
+									</Column>
+								
+									<Column 
+									width="20%" 
+									demandPopin="false" 
+									hAlign="Center" 
+									minScreenWidth="Tablet">
+										<Text text="Start Date"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem> 
+										<cells> 
+											<Text text="{IdProject}"/> 
+											<Text text="{ProjectName}"/> 
+											<Text text="{Manager}"/> 
+											<Text text="{
+													parts:[
+														{path: 'StartDate'},
+														{path: 'Maestros>/dateFormat'}
+													],
+													formatter : '.formatter.stringToFormattedDate'
+												}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<HBox id="hboxPag" justifyContent="{= ${device>/isPhone} ? 'Center' : 'End' }" class="btnPaginator sapUiSmallMarginTop">
+								<!-- El objeto Paginator se inserta aqui desde el controlador -->
+							</HBox>
+						</VBox>
+					</VBox>
+				</content>
+			</Panel>
+        </content>
+    </Dialog>
+
+</core:FragmentDefinition>

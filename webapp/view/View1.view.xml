@@ -1,0 +1,24 @@
+<mvc:View xmlns:t="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="com.everis.Absentismos.controller.View1" xmlns:tnt="sap.tnt">
+	<App>
+		<pages>
+			<SplitContainer id="SplitContDemo" initialDetail="SeccionColaborador" initialMaster="master">
+				<detailPages>
+					<core:Fragment fragmentName="com.everis.Absentismos.view.fragments.SeccionColaborador" type="XML"/>
+					<core:Fragment fragmentName="com.everis.Absentismos.view.fragments.SeccionAprobador" type="XML"/>
+				</detailPages>
+				<masterPages>
+					<Page id="master" title="Absentismo">
+						<content>
+							<tnt:NavigationList items="{path: 'menuOpciones>/result'}">
+								<tnt:NavigationListItem custom:to="{menuOpciones>value}" text="{menuOpciones>Title}" key="{menuOpciones>value}" icon="{menuOpciones>icon}"
+									select="onListItemPress"/>
+							</tnt:NavigationList>
+						</content>
+					</Page>
+				</masterPages>
+			</SplitContainer>
+		</pages>
+	</App>
+</mvc:View>

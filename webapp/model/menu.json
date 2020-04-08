@@ -1,0 +1,14 @@
+{
+	"result" : [
+		{
+			"Title" : "Colaborador",
+			"value" : "seccionColaborador",
+			"icon" : "sap-icon://employee"
+		},
+		{
+			"Title" : "Aprobador",
+			"value" : "seccionAprobador",
+			"icon" : "sap-icon://kpi-managing-my-area"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"dateFormat" : "dd/MM/yyyy",
+	"completeDateFormat" : "dd/MM/yyyy HH:mm:ss",
+		"__regExpComment": "Expresion regular oiginal: ^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑàèìòùÀÈÌÒÙãÃõÕ_\n /.,/*\\-\"\\'`´/(/)çÇ¿?¡!:;/$€%&=<>@\\[\\]]+$",
+	"regExp" : "^[a-zA-Z0-9\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00fc\u00dc\u00f1\u00d1\u00E0\u00E8\u00EC\u00F2\u00F9\u00C0\u00C8\u00CC\u00D2\u00D9\u00E3\u00C3\u00F5\u00D5_\n /.,/*\\-\"\\'`´/(/)\u00e7\u00c7¿?¡!:;/$\u20AC%&=<>@\\[\\]]+$",
+	"Months":[ "","January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December" ],
+	"weekday":[ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+	"__charDecode": "Este Json se usa para mostrar bien los nombres con acentos y ñ en los excel",
+	"charDecode": [
+		{"char":"á","code":"&#226;"},
+		{"char":"é","code":"&#233;"},
+		{"char":"í","code":"&#237;"},
+		{"char":"ó","code":"&#243;"},
+		{"char":"ú","code":"&#250;"},
+		{"char":"Á","code":"&#193;"},
+		{"char":"É","code":"&#201;"},
+		{"char":"Í","code":"&#205;"},
+		{"char":"Ó","code":"&#211;"},
+		{"char":"Ú","code":"&#218;"},
+		{"char":"ä","code":"&#228;"},
+		{"char":"ë","code":"&#235;"},
+		{"char":"ï","code":"&#239;"},
+		{"char":"ö","code":"&#246;"},
+		{"char":"ü","code":"&#252;"},
+		{"char":"Ä","code":"&#196;"},
+		{"char":"Ë","code":"&#203;"},
+		{"char":"Ï","code":"&#207;"},
+		{"char":"Ö","code":"&#214;"},
+		{"char":"Ü","code":"&#220;"},
+		{"char":"ñ","code":"&#241;"},
+		{"char":"Ñ","code":"&#209;"}
+	]
+}

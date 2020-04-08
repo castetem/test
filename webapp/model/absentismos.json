@@ -1,0 +1,132 @@
+{
+	"usuario": {
+		"idPersona": "210395",
+		"nombre": "Diego Antonio",
+		"apellido": "Lazarte Peláez",
+		"idEmpleado": "178173",
+		"empresa": "everis Perú"
+	},
+	"tipoAbsentismo": [{
+		"nombreAbs": "Licencias"
+	}, {
+		"nombreAbs": "Vacaciones"
+	}, {
+		"nombreAbs": "Descansos Médicos"
+	}, {
+		"nombreAbs": "Cupones: Mañana"
+	}, {
+		"nombreAbs": "Cupones: Tarde"
+	}],
+	"solicitud1": [{
+		"id": "00000543",
+		"fechainicio": "20/09/2019",
+		"fechafin": "20/09/2019",
+		"dias": "1",
+		"clase": "Cupones: Tarde"
+	}],
+	"solicitud2": [{
+		"id": "00000337",
+		"fechainicio": "23/09/2019",
+		"fechafin": "27/09/2019",
+		"dias": "5",
+		"clase": "Vacaciones"
+	}],
+	"proyecto": [{
+		"idProyecto": "proj-0789",
+		"nombre": "LFS",
+		"fechaInicio": "02/09/2019",
+		"fechaFin": "18/09/2019",
+		"responsable": "César Sánchez",
+		"activo": "activo-123",
+		"ruc": "10956734251"
+	},{
+		"idProyecto": "proj-0790",
+		"nombre": "Control Staffing",
+		"fechaInicio": "06/09/2019",
+		"fechaFin": "19/09/2019",
+		"responsable": "César Sánchez",
+		"activo": "activo-333",
+		"ruc": "20954343123"
+	},{
+		"idProyecto": "proj-0791",
+		"nombre": "Surabi",
+		"fechaInicio": "09/09/2019",
+		"fechaFin": "19/09/2019",
+		"responsable": "César Sánchez",
+		"activo": "activo-334",
+		"ruc": "20923443211"
+	},{
+		"idProyecto": "proj-0792",
+		"nombre": "Primax - Danaus",
+		"fechaInicio": "10/09/2019",
+		"fechaFin": "30/09/2019",
+		"responsable": "César Sánchez",
+		"activo": "activo-336",
+		"ruc": "10923434345"
+	}],
+	"colaborador": [{
+		"idPersona": "210395",
+		"nombre": "Diego Antonio",
+		"apellido": "Lazarte Peláez",
+		"idEmpleado": "178173",
+		"empresa": "everis Perú",
+		"categoria": "Centers Developer",
+		"csr": "csr123",
+		"tipo": "tipoABC",
+		"perfil": "perfil123"
+	}, {
+		"idPersona": "210395",
+		"nombre": "Juan Alexander",
+		"apellido": "Zegarra Arana",
+		"idEmpleado": "178175",
+		"empresa": "everis Perú",
+		"categoria": "Centers Junior",
+		"csr": "csr654",
+		"tipo": "tipoADB",
+		"perfil": "perfil112"
+	}, {
+		"idPersona": "210395",
+		"nombre": "Ingelshin Nicholson",
+		"apellido": "Barraza Canchán",
+		"idEmpleado": "178176",
+		"empresa": "everis Perú",
+		"categoria": "Centers Junior",
+		"csr": "csr777",
+		"tipo": "tipoADB",
+		"perfil": "perfil122"
+	}],
+	"anio": [{
+		"descripcion": "2016"
+	}, {
+		"descripcion": "2017"
+	}, {
+		"descripcion": "2018"
+	}, {
+		"descripcion": "2019"
+	}],
+	"mes": [{
+		"descripcion": "Enero"
+	}, {
+		"descripcion": "Febrero"
+	}, {
+		"descripcion": "Marzo"
+	}, {
+		"descripcion": "Abril"
+	}, {
+		"descripcion": "Mayo"
+	}, {
+		"descripcion": "Junio"
+	}, {
+		"descripcion": "Julio"
+	}, {
+		"descripcion": "Agosto"
+	}, {
+		"descripcion": "Setiembre"
+	}, {
+		"descripcion": "Octubre"
+	}, {
+		"descripcion": "Noviembre"
+	}, {
+		"descripcion": "Diciembre"
+	}]
+}

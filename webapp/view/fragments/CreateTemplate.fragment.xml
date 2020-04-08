@@ -1,0 +1,96 @@
+<core:FragmentDefinition
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Dialog
+		id="DialogTemplate"
+		type="Standard"
+		showHeader="false"
+		state="None"
+		draggable="true"
+		contentWidth="{= ${device>/isTouch} ? '100%' : '30%'}"  
+		afterOpen="init"
+		class="popup">
+		<customHeader>
+			<!-- Titulo y boton de cierre -->
+			<Toolbar class="sapUiContentPadding">
+				<Text id="titTemplate" class="smallTextBoldBlue sapUiSmallMarginBegin"></Text>
+				<ToolbarSpacer />
+				<core:Icon src="sap-icon://decline" size="1.3rem" class="sapUiSmallMarginEnd setPointer" press="onCloseDialogTemplate"/>
+			</Toolbar>
+		</customHeader>
+        <content>
+        	<Panel id="panelTemplate" class="backgroundSpaceWhite" fieldGroupIds="nameTemplate,codeTemplate">
+				<content>
+					<VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMarginBeginEnd sapUiTinyMarginBottom">	
+						<VBox alignItems="Stretch" width="100%" class="sapUiSmallMarginTopBottom"> 
+							<Label text="TEMPLATE NAME"/>
+							<Input 
+								id="nameTemplate" 
+								value="{/NameTemplate}" 
+								placeholder="Enter name" 
+								width="100%" 
+								ariaLabelledBy="cmbWBS,templateHours,btnsaveTemplate"
+								liveChange="onValidateNameTeplate" 
+								maxLength="40"/>
+						</VBox>
+						<VBox alignItems="Stretch" width="100%" class="sapUiTinyMarginTopBottom"> 
+							<Label text="PROJECT CODE"/>
+							<Input 
+								id="codeTemplate" 
+							    ariaLabelledBy = "cmbWBS,btnsaveTemplate"
+								value="{/IdProject}" 
+								width="100%" 
+								placeholder="Enter the project code"
+								liveChange="onValidateProject" 
+								maxLength="16"/>
+							<VBox 
+								fitContainer="true"
+								alignItems="Start">
+								<Link id="lnkAdvancedSearch" text="Advanced Search" press="onOpenAdvSearchProjects" app:ToElement="codeTemplate"/>
+							</VBox>
+						</VBox>	
+						<VBox alignItems="Stretch" width="100%" class="sapUiTinyMarginTopBottom"> 
+						    <Label text="PROJECT TASK"/>
+						   	<ComboBox
+							   	id="cmbWBS"
+								showSecondaryValues= "true"
+								filterSecondaryValues= "true"
+								placeholder="Select a project task"
+								value="{/wbsDesc}"
+								selectedKey="{/IdWBS}"
+								width="100%"
+								ariaLabelledBy="nameTemplate,templateHours,btnsaveTemplate"
+								change="onValidateCmbWBS"
+								selectionChange= "onValidateSelectionWBS"
+								enabled="false"
+								items="{
+									path: 'TIMELABOR>/WBSListSet'
+								}">
+							<core:ListItem key="{TIMELABOR>IdWBS}" text="{TIMELABOR>Description}" additionalText="{TIMELABOR>IdWBS}"/>
+						</ComboBox>
+						</VBox>	
+						<VBox alignItems="Stretch" width="100%" class="sapUiSmallMarginTopBottom"> 
+							<Label text="TEMPLATE HOURS"/>
+							<Input 
+								id="templateHours" 
+								value="{/Hours}" 
+								placeholder="Enter hours" 
+								width="100%" 
+								ariaLabelledBy="nameTemplate,cmbWBS,btnsaveTemplate"
+								liveChange="onValidateInputHours" 
+								maxLength="40"/>
+						</VBox>
+					</VBox>
+						
+					<HBox alignItems="Center" justifyContent="Center">
+						<Button text="Cancel" press="onCloseDialogTemplate" class="btnBorderBlue sapUiTinyMarginEnd"/>
+						<Button text="Save" id="btnsaveTemplate" class="btnGreen" press="onSaveTemplate" enabled="false"/>
+					</HBox>
+				</content>
+			</Panel>
+        </content>
+    </Dialog>
+
+</core:FragmentDefinition>

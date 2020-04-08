@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Popover id="singleInput" placement="Vertical" showHeader="false" showArrow="true" beforeClose="beforeCloseDayCalendar"
+		afterClose="afterCloseDayCalendar" afterOpen="afterOpenDayCalendar" contentWidth="50%" class="popup">
+		<content>
+			<Panel width="100%" class="panelTemplates backgroundSpaceWhite sapUiResponsiveMargin" backgroundDesign="Transparent">
+				<content>
+					<MessageStrip id="msgConfirmation" type="Error" showIcon="true" showCloseButton="false" visible="false"></MessageStrip>
+					<ScrollContainer height="150px" horizontal="false" vertical="true">
+						<content>
+							<Table id="tableDayCalendar" showSeparators="None" width="auto" class="tableSingleInput"
+								items="{ path: 'absentismos>/solicitud1' }">
+								<columns>
+									<Column hAlign="Center" width="15%">
+										<Text text="ID SOLICITUD" class="borderLineWhite"/>
+									</Column>
+									<Column hAlign="Center" width="15%">
+										<Text text="FECHA INICIO" class="borderLineWhite"/>
+									</Column>
+									<Column hAlign="Center" width="15%">
+										<Text text="FECHA FIN" class="borderLineWhite"/>
+									</Column>
+									<Column hAlign="Center" width="15%">
+										<Text text="# DÍAS" class="borderLineWhite"/>
+									</Column>
+									<Column hAlign="Center" width="20%">
+										<Text text="CLASE DE ABSENTISMO" class="borderLineWhite"/>
+									</Column>
+									<Column hAlign="Center" width="5%">
+										<Text text="" class="borderLineWhite"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Bottom">
+										<cells>
+											<Text text="{ path: 'absentismos>id' }" wrapping="false" class="detTableSol"/>
+											<Text text="{ path: 'absentismos>fechainicio' }" wrapping="false" class="detTableSol"/>
+											<Text text="{ path: 'absentismos>fechafin' }" wrapping="false" class="detTableSol"/>
+											<Text text="{ path: 'absentismos>dias' }" wrapping="false" class="detTableSol"/>
+											<Text text="{ path: 'absentismos>clase' }" wrapping="false" class="detTableSol"/>
+											<core:Icon src="sap-icon://delete" press="onDeleteSolicitudAprobada" class="iconGreen"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</ScrollContainer>
+				</content>
+			</Panel>
+		</content>
+	</Popover>
+</core:FragmentDefinition>

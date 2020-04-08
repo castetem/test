@@ -1,0 +1,403 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<Page id="seccionAprobador" showHeader="false">
+		<content>
+			<VBox class=" backgroundSpaceWhite">
+				<l:VerticalLayout class="sapUiContentPadding backgroundSpace1" width="100%" visible="{device>/isSurfaceDesktop}">
+					<l:content>
+						<Breadcrumbs currentLocationText="Aprobador-Administrador">
+							<!-- <Link press="goToFioriAux" text="Home"/> -->
+							<Link press="goToHomeAux" text="Absentismo"/>
+						</Breadcrumbs>
+					</l:content>
+				</l:VerticalLayout>
+				<!--<VBox id="confirmationMessage2" class="confirmationMessage backgroundSpace1"></VBox>-->
+				<l:Grid defaultSpan="{= ${device>/isNotSurfaceDesktop} ? 'L12 M12 S12' : 'L12 M12 S12' }"
+					class="backgroundSpace1 backgroundSpace1Breadcrumbs">
+					<l:content>
+						<VBox width="100%">
+							<layoutData>
+								<l:GridData span="{= ${device>/isNotSurfaceDesktop} ? 'L12 M12 S12' : 'L12 M12 S12' }"/>
+							</layoutData>
+							<!--<Title text="Time entry" id="titleExpense2" class="bigTitle"/>-->
+							<HBox class="tableCardView" width="100%" justifyContent="Center">
+								<Table showSeparators="None" fixedLayout="true" width="100%">
+									<columns>
+										<Column minScreenWidth="Tablet" hAlign="Left" width="25%" demandPopin="true">
+											<Text text="PROYECTO"/>
+										</Column>
+										<Column minScreenWidth="Tablet" hAlign="Left" width="25%" demandPopin="true">
+											<Text text="COLABORADOR"/>
+										</Column>
+										<Column minScreenWidth="Tablet" hAlign="Left" width="15%" demandPopin="true">
+											<Text text="PERIODO: AÑO"/>
+										</Column>
+										<Column minScreenWidth="Tablet" hAlign="Left" width="15%" demandPopin="true">
+											<Text text="PERIODO: MES"/>
+										</Column>
+										<Column minScreenWidth="Tablet" hAlign="Right" width="20%" demandPopin="true"></Column>
+									</columns>
+									<items>
+										<ColumnListItem vAlign="Top">
+											<cells>
+												<VBox width="100%" alignItems="Stretch">
+													<HBox alignItems="Center" class="cssSearchFieldAsInput">
+														<SearchField id="inpSearchProyectos" width="100%" placeholder="Seleccione un proyecto" showSearchButton="false">
+															<layoutData>
+																<FlexItemData growFactor="1"/>
+															</layoutData>
+														</SearchField>
+														<Button id="btnShowPopoverTemplates" icon="sap-icon://value-help" press="onShowPopoverProyectos" ariaDescribedBy="inpSearchProjects"/>
+													</HBox>
+												</VBox>
+												<VBox width="100%" alignItems="Stretch">
+													<HBox alignItems="Center" class="cssSearchFieldAsInput">
+														<SearchField id="inpSearchColaboradores" width="100%" placeholder="Seleccione un colaborador" showSearchButton="false">
+															<layoutData>
+																<FlexItemData growFactor="1"/>
+															</layoutData>
+														</SearchField>
+														<Button id="btnShowPopoverTemplates2" icon="sap-icon://value-help" press="onShowPopoverColaboradores" ariaDescribedBy="inpSearchProjects"/>
+													</HBox>
+												</VBox>
+												<ComboBox id="cboPeriodoAnio" change="onValidateRangeSelection" selectionChange="onValidateRangeSelection" placeholder="Seleccione año"
+													items="{ path: 'absentismos>/anio' }" width="100%">
+													<core:Item key="{absentismos>descripcion}" text="{absentismos>descripcion}"/>
+												</ComboBox>
+												<ComboBox id="cmbPeriodoMes" change="onValidateRangeSelection" selectionChange="onValidateRangeSelection" placeholder="Seleccione mes"
+													items="{ path: 'absentismos>/mes' }" width="100%">
+													<core:Item key="{absentismos>descripcion}" text="{absentismos>descripcion}"/>
+												</ComboBox>
+												<VBox width="100%">
+													<Button id="btnBuscar" text="Buscar" enabled="true" class="btnGreen marginRight" press="onSearchPC"/>
+												</VBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</HBox>
+						</VBox>
+						<VBox class="backgroundSpaceGrey4">
+							<VBox id="boxTableTimeCards">
+								<Table id="TableDetail1" title="Colaboradores" inset="false" items="" class="tableGrey tableGreyMab" width="auto"
+									mode="{= ${device>/isNotSurfaceDesktop} ? 'SingleSelectMaster' : 'None' }" selectionChange="onItemSelected">
+									
+									<columns>
+										<Column hAlign="Left">
+											<Text text="CÓDIGO" class="sapUiSmallMarginBegin"/>
+										</Column>
+										<Column hAlign="Center">
+											<Text text="NOMBRE"/>
+										</Column>
+										<Column minScreenWidth="Large" hAlign="Center">
+											<Text text="CATEGORÍA"/>
+										</Column>
+										<Column hAlign="Center">
+											<Text text="CSR"/>
+										</Column>
+										<Column hAlign="Center">
+											<Text text="TIPO"/>
+										</Column>
+										<Column hAlign="End" minScreenWidth="Medium">
+											<Text text="PERFIL" class="sapUiSmallMarginEnd"/>
+										</Column>
+										<Column hAlign="End" minScreenWidth="Medium">
+											<Text text="" class="sapUiSmallMarginEnd"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem id="items">
+											<cells>
+												<Text text="{ path: 'absentismos>/idPersona' }" id="txtCodigo"/>
+												<Text text="{ path: 'absentismos>/nombre' } { path: 'absentismos>/apellido' }" id="txtNombre"/>
+												<Text text="{ path: 'absentismos>/categoria' }" id="txtCategoria"/>
+												<Text text="{ path: 'absentismos>/csr' }" id="txtCsr"/>
+												<Text text="{ path: 'absentismos>/tipo' }" id="txtTipo"/>
+												<Text text="{ path: 'absentismos>/perfil' }" id="txtPerfil"/>
+												<HBox justifyContent="End">
+													<Button icon="sap-icon://pdf-attachment" press="onExportToPDF_" class="iconGreen" tooltip="PDF" id="reportPDF"/>
+													<Button icon="sap-icon://excel-attachment" press="onExportToExcel_" class="iconGreen" tooltip="Excel" id="reportExcel"/>
+													<!--<HBox visible="{device>/isSurfaceDesktop}">
+														<Button icon="sap-icon://detail-view" press="goToViewTimeEntry_" class="iconGreen" tooltip="View" visible="{= (${Editable} === 'No') }"/>
+														<Button icon="sap-icon://edit" press="goToEditTimeEntry_" class="iconGreen" tooltip="Edit" visible="{= (${Editable} === 'Yes') }"/>
+													</HBox>-->
+												</HBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<HBox id="PaginationRecentTLs" justifyContent="{= ${device>/isNotSurfaceDesktop} ? 'Center' : 'End' }"
+									class="btnPaginator sapUiSmallMarginTop"/>
+							</VBox>
+						</VBox>
+						<VBox direction="Column" id="__vbox2" class="VBoxCalendar minHeight2de3 backgroundSpaceGrey3">
+							<layoutData>
+								<l:GridData span="{= ${device>/isNotSurfaceDesktop} ? 'L12 M12 S12' : 'L12 M12 S12' }"/>
+							</layoutData>
+							<items>
+								<Table id="tableCalendar3" class="calendarTable sapUiSmallMarginBottom" width="auto">
+									<headerToolbar>
+										<Toolbar>
+											<content>
+												<HBox justifyContent="Start" width="15%" visible="{device>/isSurfaceDesktop}">
+													<Button id="btnReset2" press="onReset" icon="sap-icon://refresh" enabled="false"/>
+												</HBox>
+												<HBox justifyContent="{= ${device>/isSurfaceDesktop} ? 'End' : 'Center'}" width="{= ${device>/isSurfaceDesktop} ? '46%' : '100%'}"
+													alignItems="Center">
+													<Button id="btnPrevious2" press="onPrevious" class="previousIcon sapUiTinyMarginEnd" icon="sap-icon://navigation-left-arrow"/>
+													<Label id="monthTitle2" text="Setiembre 2019" class="boldText"/>
+													<Button id="btnNext2" press="onNext" class="nextIcon sapUiTinyMarginBegin" icon="sap-icon://navigation-right-arrow"/>
+												</HBox>
+											</content>
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="LUN" class="boldText"/>
+										</Column>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="MAR" class="boldText"/>
+										</Column>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="MIE" class="boldText"/>
+										</Column>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="JUE" class="boldText"/>
+										</Column>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="VIE" class="boldText"/>
+										</Column>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="SAB" class="boldText"/>
+										</Column>
+										<Column width="14.28%" demandPopin="true" hAlign="Center" minScreenWidth="Phone">
+											<Text text="DOM" class="boldText"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<VBox>
+												<Text text=""/>
+												<Button text="" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text=""/>
+												<Button text="" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text=""/>
+												<Button text="" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text=""/>
+												<Button text="" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text=""/>
+												<Button text="" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text=""/>
+												<Button text="" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text="01" class="dayCalend2"/>
+												<Button text="-" id="btnDay-1"/>
+											</VBox>
+										</ColumnListItem>
+										<ColumnListItem>
+											<VBox>
+												<Text text="02" class="dayCalend2"/>
+												<Button text="-" id="btnDay-2"/>
+											</VBox>
+											<VBox>
+												<Text text="03" class="dayCalend2"/>
+												<Button text="-" id="btnDay-3"/>
+											</VBox>
+											<VBox>
+												<Text text="04" class="dayCalend2"/>
+												<Button text="-" id="btnDay-4"/>
+											</VBox>
+											<VBox>
+												<Text text="05" class="dayCalend2"/>
+												<Button text="-" id="btnDay-5"/>
+											</VBox>
+											<VBox>
+												<Text text="06" class="dayCalend2"/>
+												<Button text="-" id="btnDay-6"/>
+											</VBox>
+											<VBox>
+												<Text text="07" class="dayCalend2"/>
+												<Button text="-" id="btnDay-7"/>
+											</VBox>
+											<VBox>
+												<Text text="08" class="dayCalend2"/>
+												<Button text="-" id="btnDay-8"/>
+											</VBox>
+										</ColumnListItem>
+										<ColumnListItem>
+											<VBox>
+												<Text text="09" class="dayCalend2"/>
+												<Button text="-" id="btnDay-9"/>
+											</VBox>
+											<VBox>
+												<Text text="10" class="dayCalend2"/>
+												<Button text="-" id="btnDay-10"/>
+											</VBox>
+											<VBox>
+												<Text text="11" class="dayCalend2"/>
+												<Button text="-" id="btnDay-11"/>
+											</VBox>
+											<VBox>
+												<Text text="12" class="dayCalend2"/>
+												<Button text="-" id="btnDay-12"/>
+											</VBox>
+											<VBox>
+												<Text text="13" class="dayCalend2"/>
+												<Button text="-" id="btnDay-13"/>
+											</VBox>
+											<VBox>
+												<Text text="14" class="dayCalend2"/>
+												<Button text="-" id="btnDay-14"/>
+											</VBox>
+											<VBox>
+												<Text text="15" class="dayCalend2"/>
+												<Button text="-" id="btnDay-15"/>
+											</VBox>
+										</ColumnListItem>
+										<ColumnListItem>
+											<VBox>
+												<Text text="16" class="dayCalend2"/>
+												<Button text="-" id="btnDay-16"/>
+											</VBox>
+											<VBox>
+												<Text text="17" class="dayCalend2"/>
+												<Button text="-" id="btnDay-17"/>
+											</VBox>
+											<VBox>
+												<Text text="18" class="dayCalend2"/>
+												<Button text="-" id="btnDay-18"/>
+											</VBox>
+											<VBox>
+												<Text text="19" class="dayCalend2"/>
+												<Button text="-" id="btnDay-19"/>
+											</VBox>
+											<VBox>
+												<Text text="20" class="dayCalend2"/>
+												<Button text="-" id="btnDay-20"/>
+											</VBox>
+											<VBox>
+												<Text text="21" class="dayCalend2"/>
+												<Button text="-" id="btnDay-21"/>
+											</VBox>
+											<VBox>
+												<Text text="22" class="dayCalend2"/>
+												<Button text="-" id="btnDay-22"/>
+											</VBox>
+										</ColumnListItem>
+										<ColumnListItem>
+											<VBox>
+												<Text text="23" class="dayCalend2"/>
+												<Button text="-" id="btnDay-23"/>
+											</VBox>
+											<VBox>
+												<Text text="24" class="dayCalend2"/>
+												<Button text="-" id="btnDay-24"/>
+											</VBox>
+											<VBox>
+												<Text text="25" class="dayCalend2"/>
+												<Button text="-" id="btnDay-25"/>
+											</VBox>
+											<VBox>
+												<Text text="26" class="dayCalend2"/>
+												<Button text="-" id="btnDay-26"/>
+											</VBox>
+											<VBox>
+												<Text text="27" class="dayCalend2"/>
+												<Button text="-" id="btnDay-27"/>
+											</VBox>
+											<VBox>
+												<Text text="28" class="dayCalend2"/>
+												<Button text="-" id="btnDay-28"/>
+											</VBox>
+											<VBox>
+												<Text text="29" class="dayCalend2"/>
+												<Button text="-" id="btnDay-29"/>
+											</VBox>
+										</ColumnListItem>
+										<ColumnListItem>
+											<VBox>
+												<Text text="30" class="dayCalend2"/>
+												<Button text="-" id="btnDay-30"/>
+											</VBox>
+											<VBox>
+												<Text text="" class="dayCalend2"/>
+												<Button text="-" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text="" class="dayCalend2"/>
+												<Button text="-" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text="" class="dayCalend2"/>
+												<Button text="-" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text="" class="dayCalend2"/>
+												<Button text="-" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text="" class="dayCalend2"/>
+												<Button text="-" enabled="false"/>
+											</VBox>
+											<VBox>
+												<Text text="" class="dayCalend2"/>
+												<Button text="-" enabled="false"/>
+											</VBox>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<!--<HBox justifyContent="{= ${device>/isNotSurfaceDesktop} ? 'Center' : 'End' }" class="sapUiSmallMarginBottom">
+									<Button id="btnApprove2" text="{i18n>grabar}" enabled="false" press="onApprove" class="btnGreen"/>
+								</HBox>-->
+							</items>
+							<!--calendar 2-->
+							<!--<l:VerticalLayout>
+								<l:content>
+									<u:Calendar id="calendar" select="handleCalendarSelect" intervalSelection="false" singleSelection="false" width="52rem"/>
+									<Button press="handleRemoveSelection" text="Remove All Selected Dates"/>
+									<List id="selectedDatesList" class="labelMarginLeft" noDataText="No Dates Selected" headerText="Selected Dates (yyyy-mm-dd)"
+										items="{path: '/selectedDates'}">
+										<StandardListItem title="{Date}"/>
+									</List>
+								</l:content>
+							</l:VerticalLayout>-->
+						</VBox>
+						<!--  Contenedor Time Labor OF  -->
+						<!--<VBox visible="{device>/isSurfaceDesktop}">
+							<layoutData>
+								<l:GridData span="{= ${device>/isNotSurfaceDesktop} ? 'L4 M4 S12' : 'L4 M4 S12' }"/>
+							</layoutData>
+							<Title text="Time labor of" class="mediumTitle sapUiTinyMarginTop"/>
+							<CustomTile id="tileChangeUserTE2" class="userCardView">
+								<HBox class="userCardView alignCenter" width="100%" id="hboxUser2">
+									<items>
+										<VBox width="20%">
+											<sap.ui.core:Icon xmlns:sap.ui.core="sap.ui.core" src="sap-icon://customer" size="1.7em" class="textAlignCenter"/>
+										</VBox>
+										<VBox width="100%" direction="Column">
+											<Label text="{ path: 'absentismos>/usuario/apellido' } { path: 'absentismos>/usuario/nombre' }" class="sapMTitleNoWrap"/>
+											<Text text="Emp. ID: { path: 'absentismos>/usuario/idEmpleado' }"/>
+											<Text text="Pers. ID: { path: 'absentismos>/usuario/idPersona' }"/>
+											<Text text="{ path: 'absentismos>/usuario/empresa' }"/>
+										</VBox>
+									</items>
+								</HBox>
+							</CustomTile>
+						</VBox>-->
+					</l:content>
+				</l:Grid>
+			</VBox>
+		</content>
+	</Page>
+</core:FragmentDefinition>

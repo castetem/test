@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:t="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<Popover id="popoverColaboradores" placement="Bottom" initialFocus="input" showHeader="false" showArrow="false" contentMinWidth="268px"
+		class="templateCombo">
+		<content>
+			<SelectList items="{ path: 'absentismos>/colaborador', sorter: { path: 'nombre' } }" itemPress="onSelectColaborador" id="listColaboradores">
+				<core:ListItem key="{idPersona}" text="{absentismos>nombre} {absentismos>apellido}" icon="sap-icon://employee"/>
+			</SelectList>
+		</content>
+	</Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,3617 @@
+/* -------------- ESTILOS GLOBALES ---------- */
+span {
+outline: none;
+}
+
+.sapMShell {
+overflow-y: hidden;
+}
+
+.minHeight2de3 {
+	min-height : 55vh;
+}
+
+.minHeight2de3Tab {
+	min-height : 75vh;
+}
+
+/* Este estilo sirve para que no salga la linea de puntos al seleccionar un titulo de un panel */
+html:not([data-sap-ui-browser^="ie"]):not([data-sap-ui-browser^="ed"]) .sapUiIcon:focus {
+    outline-width: 1px;
+    outline-style: unset;
+    outline-offset: -1px;
+}
+
+.minHeight9de10 {
+	min-height : 81.2vh;
+}
+
+.btnAnchoTotal .sapMBtnInner {
+	width: 150px !important;
+}
+
+.btnAnchoTotal1 .sapMBtnInner {
+	width: 110px !important;
+}
+
+/* Estilos para los MessageBox */
+.sapMMessageDialog  .sapMDialogSection {
+	background-color: #ffffff !important;
+}
+
+.sapMMessageDialog  .sapMDialogTitle {
+	background-color: #f1f1f1 !important;
+	box-shadow: none !important;
+}
+
+.sapMMessageDialog  .sapMDialogTitle .sapMTitle  {
+	font-family: SourceSansPro-Bold !important;
+	color: #2a5095 !important;
+}
+
+.sapMMessageDialog  .sapMDialogTitle .sapUiIcon   {
+	color: #2a5095 !important;
+}
+
+
+/*--------------- FORMAT ------------------*/
+.sapUiBody {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #ffffff;
+    font-size: 1rem;
+    outline: 0 !important;
+}
+
+.sapUiBody:active {
+    outline: 0 !important;
+}
+
+.sapUiBody:focus {
+    outline: 0 !important;
+}
+
+.textAlignCenter{
+	text-align:center;
+}
+
+.textAlignLeft{
+	text-align:left;
+}
+
+.textAlignRight{
+	text-align:right;
+}
+
+.displayRight{
+	display: flex;
+	align-items: center;
+    justify-content: flex-end;
+}
+
+.margin0{
+	margin: 0;
+	padding: 0;
+}
+.margin5{
+	margin: 5px;
+}
+
+.margin20{
+	margin: 0 20px;
+	margin-right:60px;
+}
+
+.marginTop4 {
+	margin-top: 4px;
+}
+
+.marginTop15{
+	margin-top: 15px;
+}
+
+.marginTop60{
+	padding-top: 60px;
+}
+
+.paddingTop60{
+	padding-top: 36px;
+}
+
+.padding20{
+	padding:20px;
+}
+
+.borderRightGreen{
+	border-right: solid 0.5px #bfcc4e;
+	width: 1rem;
+	margin-right: 1rem;
+}
+
+.borderRightWhite{
+	border-right: solid 1.5px #ffffff;
+}
+
+.borderLeftWhite{
+	border-left: solid 1.5px #ffffff;
+}
+
+.borderLeftGrey{
+	border-left: 1.5px solid #C8C8C8 !important;
+}
+.arrowDown{
+	margin: 18px 20px 0 0;
+}
+
+.paddingTableGrey{
+	padding-left: 33px;
+	padding-right: 56px;
+}
+
+.paddingTableBlue{
+	padding-right: 37px;
+}
+
+.marginToptableCardview{
+	margin-top:-13px;
+}
+.fontSize18 {
+	font-size : 18px !important;
+}
+.fontSize16 {
+	font-size : 16px !important;
+}
+.fontSize14 {
+	font-size : 14px !important;
+}
+.azulLink {
+	color: #2a5095 !important;
+}
+.darkBlue {
+	color: rgb(76,114,176) !important;;
+}
+.colorBlue {
+	color: #4485c9 !important;
+}
+.bold {
+	font-family: SourceSansPro-Bold !important;
+}
+/*____________________END FORMAT__________________________*/
+
+/*____________________ACCESS AUTHORIZATIONS_______________*/
+
+.fontSize32>.sapMFlex>div>span{
+
+	font-size: 32px;
+}
+.pageTitle{
+	font-size: 34px;
+}
+.delegations>.sapMFlexItem:last-child{
+	text-align: right;
+}
+
+.labelTitleAccess{
+	font-size: 22px;
+}
+
+/*.generalAccessVBox>.sapMFlexItem:nth-child(4){
+	background-color: #EBECF0;
+	visibility: hidden;
+}
+
+.generalAccessVBox>.sapMFlexItem:nth-child(5){
+	visibility: hidden;
+}*/
+
+/*____________________END ACCESS AUTHORIZATIONS___________*/
+
+
+.animBrightnessDay {
+    animation-name: brightnessDayBox;
+    animation-duration: 1.2s;
+}
+.animBrightnessDay .sapMBtnContent {
+    animation-name: brightnessDayText;
+    animation-duration: 1.2s;
+}
+.animBrightnessDay .sapMBtn {
+    animation-name: brightnessDayBtnBorder;
+    animation-duration: 1.2s;
+}
+
+@keyframes brightnessDayBox {
+    0% { background: rgba(128, 141, 17, 0.4); }
+    35% { background: rgba(128, 141, 17, 1); }
+    100% { background: rgba(128, 141, 17, 0); }
+}
+@keyframes brightnessDayText {
+    0% { color: #808d11; }
+    50% { color: white; }
+    100% { color: #808d11; }
+}
+@keyframes brightnessDayBtnBorder {
+    0% { border-bottom: none; }
+    35% { border-bottom: none; }
+    100% { border-bottom: 2px solid #808d11; }
+}
+
+.animBrightnessDayErr {
+    animation-name: brightnessDayBoxErr;
+    animation-duration: 1.2s;
+}
+.animBrightnessDayErr .sapMBtnContent {
+    animation-name: brightnessDayTextErr;
+    animation-duration: 1.2s;
+}
+.animBrightnessDayErr .sapMBtn {
+    animation-name: brightnessDayBtnBorderErr;
+    animation-duration: 1.2s;
+}
+
+@keyframes brightnessDayBoxErr {
+    0% { background: rgba(229, 41, 41, 0.4); }
+    35% { background: rgba(229, 41, 41, 1); }
+    100% { background: rgba(229, 41, 41, 0); }
+}
+@keyframes brightnessDayTextErr {
+    0% { color: #e52929; }
+    50% { color: white; }
+    100% { color: #e52929; }
+}
+@keyframes brightnessDayBtnBorderErr {
+    0% { border-bottom: none; }
+    35% { border-bottom: none; }
+    100% { border-bottom: 2px solid #e52929; }
+}
+
+
+
+/*------------------ONLY TIME LABOR -----------------------*/
+
+.sapUiSizeCompact .sapMListTblRowTop > .sapMListTblCell > * {
+	margin: 0 !important;
+}
+
+.sapMBtnIcon {
+    color: #515151 !important;
+}
+
+/* JOSE REVISION */
+.cssBoxDay:hover {
+	background-color: rgba(128, 141, 17, 0.2); /* verde moqueta #808d11; */
+}
+.cssBoxWeekend {
+	background-color: rgba(237, 255, 82, 0.1); /* amarillo moqueta #808d11; */
+}
+.cssBoxDayFestive {
+	background-color: rgba(255, 252, 179, 0.4); /* amarillo suave #fffcb3*/
+}
+.cssBoxDayNoEdit {
+	background-color:rgba(200,200,200,0.40) !important;
+}
+.cssBoxDayNoEdit .sapMBtnContent {
+	color: #515151 !important;
+}
+.cssBoxDayNoEdit .sapMBtn {
+	border-color: #515151 !important;
+}
+.cssBoxDaySelect {
+	background-color: rgba(128, 141, 17, 0.4) !important; 
+}
+.cssBoxDayMod .sapMBtn {
+	border-bottom: 2px solid #808d11;
+}
+
+.cssBoxDaySelectError {
+	background-color: rgba(229, 41, 41, 0.3) !important; 
+}
+.cssBoxDayErr:hover {
+	background-color: rgba(229, 41, 41, 0.15); 
+}
+.cssBoxDayErr .sapMBtn {
+	border-bottom: 1px solid #e52929;
+}
+.cssBoxDayErr .sapMBtnContent {
+	color: #e52929 !important;
+}
+
+.cssTxtDayCalendar {
+	margin-right : 4px;
+	font-family: SourceSansPro-Bold;
+	color: #919191 !important; /* gris claro */
+}
+
+.informationVBox{
+	align-items: center;
+}
+
+.informationVBox .sapMMsgStrip.sapMMsgStripInformation.sapUiMediumMarginBottom{
+	background-color: rgba(0, 115, 194, 0.15);
+}
+
+.tileUserColor{
+	background-color: rgba(154,174,4,0.5) !important;
+}
+
+
+.calendarTable td{
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.calendarTable .marginRight{
+	margin-right:5px;
+}
+
+.tableCardView .marginRight{
+	margin-right:1rem;
+}
+
+.calendarTable .sapMVBox .sapMFlexItem:last-child{
+	align-self: center !important;
+}
+
+.calendarTable .sapMBtnContent{
+	color: #808d11;
+	text-shadow: none !important
+}
+
+.mainProjectHbox>.sapMFlexItem:first-child{
+                width:90%;
+}
+
+.projectHbox>.sapMFlexItem:first-child{
+                width:100%;
+                padding-top: 5px;
+}
+
+
+.tableSingleInput>table>thead>tr>th{
+		background-color: #ffffff;
+	    border-bottom: 1px solid #d8d2d2;
+	    color: #515151;
+	    font-weight: bold;
+	    font-size: 16px;
+	    margin: 13px 1.875rem;
+	    vertical-align: middle;
+}
+
+.tableTemplate>table>thead>tr>th{
+		background-color: #ffffff;
+	    border-bottom: 1px solid #d8d2d2;
+	    color: #515151;
+	    font-weight: bold;
+	    font-size: 16px;
+	    margin: 13px 1.875rem;
+	    vertical-align: middle;
+}
+
+.tableTemplate>table>thead>tr>th>span{
+		font-family: SourceSansPro-Semibold;
+		font-weight: 600;
+		color: #515151;
+		font-size:16px;
+}
+
+.tableSingleInput>table>thead>tr>th>span{
+		font-family: SourceSansPro-Semibold;
+		font-weight: 600;
+		color: #515151;
+		font-size:16px;
+}
+
+/*.tableSingleInput>table>tbody>tr>td:first-child{*/
+/*		padding-top:18px;*/
+/*}*/
+
+.sapMPanel>.sapMIBar{
+	background: #FFFFFF;
+}
+
+.footerCalendar.sapContrast.sapContrastPlus.sapMFooter-CTX.sapMIBar.sapMIBar-CTX.sapMPageFooter.sapMTB.sapMTB-Auto-CTX.sapMTBInactive.sapMTBNewFlex{
+	  height: 80px;
+	  background-color: rgba(80, 80, 80, 0.8);
+}
+
+.footerMAB.sapContrast.sapContrastPlus.sapMFooter-CTX.sapMIBar.sapMIBar-CTX.sapMPageFooter.sapMTB.sapMTB-Auto-CTX.sapMTBInactive.sapMTBNewFlex{
+	  height: 80px;
+	  background-color: rgba(80, 80, 80, 0.8);
+}
+
+.monthlySummary>ul>li>.sapMLIBContent>div>.sapMFlexItem:nth-child(2){
+	width:20%;
+}
+.monthlySummary>ul>li>.sapMLIBContent>div>.sapMFlexItem:last-child{
+	width:20%;
+}
+
+.monthlySummary>ul>li>.sapMLIBContent>div>.sapMFlexBox>.sapMFlexItem>label{
+	  font-family: SourceSansPro-Semibold;
+	  font-size: 14px;
+	  font-weight: 600;
+	  font-style: normal;
+	  font-stretch: normal;
+	  color: #515151;
+}
+
+.monthlySummary>ul>li>.sapMLIBContent>div>.sapMFlexBox>.sapMFlexItem>span{
+	  font-family: SourceSansPro-Light;
+	  font-size: 14px;
+	  font-weight: 600;
+	  font-style: normal;
+	  font-stretch: normal;
+	  color: #515151;
+}
+
+.monthlySummary>ul>li>.sapMLIBContent>div>.sapMFlexBox{
+	justify-content: center;
+}
+    
+section>.sapMHBox>.sapMFlexItem.sapMVBox>.confirmationMessage{
+	align-items: center;
+}
+
+.sapMMsgStrip{
+	display: flex;
+    align-items: center;
+}
+
+section>.sapMHBox>.sapMFlexItem.sapMVBox>.confirmationMessage>.sapMFlexItem{
+	width:95%;
+}
+
+/*.sapMMsgStripMessage>span.sapMText.sapMTextMaxWidth.sapUiSelectable{
+    font-family: SourceSansPro-SemiBold;
+    font-size: 28px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    color: #515151;
+}
+.sapMMsgStrip{
+	border:none;
+}
+.sapMMsgStripWarning{
+	background-color: #fbebd1;
+	box-shadow: 0 2px 6px 0 #f5a623;
+	border: solid 1px #f5a623;
+}
+
+.sapMMsgStripWarning>.sapMMsgStripIcon {
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
+    color: #f5a623;
+}
+
+.sapMMsgStripSuccess{
+	background-color: #e7ebc8;
+	box-shadow: 0 2px 6px 0 rgba(128, 141, 16, 0.5);
+	border: solid 1px #a0ae2c;
+}
+
+.sapMMsgStripSuccess>.sapMMsgStripIcon {
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
+    color: #808d11;;
+}*/
+
+/*.calendarTable>table>tbody>tr>td:nth-child(6){*/
+/*	background-color: rgba(200,200,200, 0.25);*/
+/*}*/
+
+/*.calendarTable>table>tbody>tr>td:nth-child(7){*/
+/*	background-color: rgba(200,200,200, 0.25);*/
+/*}*/
+
+
+.templateCombo{
+	width:365px;
+}
+
+.panelTemplates{
+	margin: 0 !important;
+}
+
+.panelTemplates>header>.sapMPanelHdr{
+  font-family: SourceSansPro-Semibold;
+  font-size: 16px;
+  font-style: normal;
+  font-stretch: normal;
+  color: #2a5095;
+}
+
+.panelTemplates>.sapMPanelBGTranslucent.sapMPanelContent.sapMPanelExpandablePart{
+	padding: 0;
+}
+/*----------------- TEMPLATE COMBO -------------------*/
+
+.templateCombo.sapMPopover{
+	    border: 2px solid #bfcc4e;
+}
+
+.templateCombo .sapMTB {
+    margin-left: -17px;
+}
+
+.templateCombo .sapMLIB {
+    border: none;
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.templateCombo .sapMLIB:hover {
+    background: rgba(154, 174, 4, 0.42);
+}
+
+.templateCombo .sapMLIB:active {
+    background:rgba(154, 174, 4, 0.55);
+}
+
+.templateCombo .sapMLIB:focus {
+    background:rgba(154, 174, 4, 0.55);
+}
+
+.templateCombo .sapMText {
+    font-family: SourceSansPro-Light;
+    font-weight: 600;
+    color: #515151;
+    font-size: 16px;
+}
+
+.templateCombo .sapMSFI {
+    color: #666666;
+    font-family: SourceSansPro-Italic;
+    font-weight: 600;
+    padding-left: 7px;
+    font-size: 16px;
+    /*padding-top: 10px;*/
+}
+
+.templateCombo .sapMSFB {
+	color: #666666;
+}
+
+.templateCombo  .sapMSFB:hover {
+    background: transparent;
+    color: #666666;
+}
+
+.templateCombo  .sapMSFB:active {
+    background: transparent;
+    color: #666666;
+}
+
+.templateCombo  .sapMSFB:focus {
+    background: transparent;
+    color: #666666;
+}
+
+.templateCombo .sapMSFF{
+	border:none;
+	background:transparent;
+	color: #ffffff !important;
+}
+
+:not(.sapMSFDisabled)>.sapMSFF:hover {
+    background: rgba(154, 174, 4, 0.42);
+}
+
+
+/*-----------------END TEMPLATE COMBO -------------------*/
+
+.sapUiBLy.sapMPopoverBLayer.undefined{
+	opacity: 0;
+}
+
+.sapUiBLy{
+	opacity: 0 !important;
+}
+
+.hoursSummary .cssTotalPanelAzul{
+	color:rgb(76,114,176) !important; /*Azul*/
+	font-weight:50;
+	font-size: 1.3rem;
+	font-family: SourceSansPro-Bold;
+}
+
+.hoursSummary{
+	background: #dee2e7;
+    padding: 0 25px;
+    box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+    border-radius: 4px;
+}
+
+.btnCloseSI{
+	top: 0;
+    right: 0;
+    position: absolute !important;
+    z-index: 1;
+}
+
+.btnCloseSI>div>span{
+	font-size: 1rem;
+	color: #666666;
+}
+
+#singleInputPanel>.sapMPanelBGTranslucent.sapMPanelContent{
+	padding:0;
+}
+
+.btnCloseSubmit{
+	top: 0;
+    right: 0;
+    position: absolute !important;
+    z-index: 1;
+}
+
+.btnCloseSubmit>div>span{
+	font-size: 1rem;
+	color: #666666;
+}
+
+.panelTLSubmitted>.sapMPanelContent>.sapMVBox>.sapMFlexItem{
+	text-align:center;
+}
+
+.projectInfoText.sapMText {
+	font-family: SourceSansPro-Semibold;
+	font-size: 14px;
+	font-weight: 600;
+	color: #2a5095;
+}
+
+.templateCombo .sapMPanelExpandableIcon{
+	width:100%;
+	margin: 0px 1.25rem;
+	transform: initial;
+	top: 30%;
+	text-align:left;
+}
+
+.VBoxCalendar>.sapMFlexItem:last-child{
+	text-align:right;
+}
+
+
+/*.backgroundSpace1 .mediumTitle.onlyTL{
+    padding-left: 0;
+    margin-bottom: 17px;
+    
+}
+
+.backgroundSpace1.backgroundSpace1Breadcrumbs .mediumTitle.onlyTL {
+    margin-bottom: 10px;
+}
+
+.backgroundSpace1 .backgroundSpace1Breadcrumbs.mediumTitle.onlyTL {
+    margin-bottom: 10px;
+}
+
+
+.backgroundSpace1 .mediumTitle{
+    padding-left: 0;
+    margin-bottom: 17px;
+    
+}
+
+.backgroundSpace1.backgroundSpace1Breadcrumbs .mediumTitle {
+    margin-bottom: 10px;
+}
+
+.backgroundSpace1 .backgroundSpace1Breadcrumbs.mediumTitle {
+    margin-bottom: 10px;
+}*/
+/*____________________ END ONLY TIME LABOR _____________________*/
+
+
+
+
+
+
+/*---------------------BACKGROUND-----------------------*/
+.backgroundSpaceBlue{
+	background: #4485c9;
+}
+
+.backgroundSpaceWhite{
+	background: #ffffff;
+	width:100%;
+}
+
+.backgroundSpaceGrey1 {
+  opacity: 0.85;
+  background: #dee2e7;
+}
+.backgroundSpaceGrey2 {
+	background-color: #EBECF0 ; /*Gris clarito*/
+}
+.backgroundSpaceGrey3 {
+	background-color: rgb(243,244,246) ; /*Blanco*/
+}
+
+.backgroundSpace1 {
+  opacity: 0.85;
+  background-color: #dee2e7;
+  padding: 0 1.5rem;
+}
+
+.backgroundSpace1.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1 {
+    padding-bottom: 42px;
+    padding-right: 43px;
+    padding-left: 25px;
+    padding-top: 26px;
+}
+
+.backgroundSpace1.sapUiVlt.sapUiContentPadding {
+    padding-top: 0;
+    padding-right: 1rem;
+    padding-bottom: 0;
+    padding-left: 2rem;
+}
+
+.backgroundSpace1Breadcrumbs.backgroundSpace1.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1 {
+    padding-bottom: 12px;
+    padding-right: 41px;
+    padding-left: 25px;
+    padding-top: 0px;
+}
+
+.backgroundSpace1 .backgroundSpace1Breadcrumbs.mediumTitle {
+	margin-bottom: 10px;
+}
+
+.backgroundSpace2{
+	background-color: #EBECF0 ; /*Gris clarito*/
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+
+
+.backgroundSpace2.sapUiRespGrid.sapUiRespGridHSpace1 {
+    padding-top: 0.5rem;
+
+}
+
+.backgroundSpace2 .sapUiRespGridSpanL9.sapUiRespGridSpanM9.sapUiRespGridSpanS12.sapUiRespGridSpanXL9 .sapMFlexBoxJustifyCenter .sapMLabel {
+    /*color:  #4485c9;*/
+    font-size: 1.2rem;
+}
+
+.backgroundSpace3{
+	background-color: rgb(243,244,246) ; /*Blanco*/
+	/*padding-bottom:24px;----------------------------------------------CAMBIO IVÁN 05/09/2016*/ 
+}
+
+.backgroundSpace3.paddingTableGrey.tableGrey{
+	padding-top: 48px;
+	/*margin-bottom: 121px;*/
+}
+
+.sapUiGlobalBackgroundImage {
+    background-color:white;
+    margin: 0 auto;
+}
+
+.sapUiRespGrid.sapUiRespGridHSpace1 {
+    /*padding: 0 1.5rem;*/
+    padding: 0;
+}
+
+.sapUiRespGrid.sapUiRespGridHSpace2 {
+    padding: 0 1.5rem;
+}
+.backgroundFooter.sapMTB {
+	background-color: #dee2e7;
+	height: 70px;
+}
+/*_______________________END BACKGROUND__________________________*/
+
+
+/*---------------GENERAL TEXT----------------------------*/
+@font-face {
+  font-family: "SourceSansPro-Light";
+  src: url("./SourceSansPro-Light.ttf"); 
+}
+@font-face {
+  font-family: "SourceSansPro-Black";
+  src: url("./SourceSansPro-Black.ttf"); 
+}
+
+@font-face {
+  font-family: "SourceSansPro-Bold";
+  src: url("./SourceSansPro-Bold.ttf"); 
+}
+
+@font-face {
+  font-family: "SourceSansPro-Semibold";
+  src: url("./SourceSansPro-Semibold.ttf"); 
+}
+
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url("./SourceSansPro-Regular.ttf"); 
+}
+
+@font-face {
+  font-family: "SourceSansPro-Italic";
+  src: url("./SourceSansPro-Italic.ttf"); 
+}
+
+.bigTitle{
+	font-size: 26px !important;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-Bold;
+}
+
+.mediumTitle{
+	font-size: 24px !important;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-Bold;
+}
+
+.normalTitle{
+	font-size: 20px !important;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-Bold;
+}
+
+.smallTitle{
+	font-size: 18px !important;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-Bold;
+}
+
+.tinySmallTitle.sapMText{
+	font-size: 16px !important;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-SemiBold;
+}
+.tinyTitle{
+	font-size: 14px !important;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-Bold;
+}
+
+.numberTitle{
+	font-size: 34px;
+	font-weight: 600;
+	color: #2a5095;
+	padding-left: 0;
+	font-family: SourceSansPro-Semibold;
+}
+
+
+
+.backgroundSpace1 .mediumTitle.sapMLabel{
+	font-size: 28px;
+	font-weight: 600;
+	padding-left: 0;
+	font-family: SourceSansPro-Semibold;
+	color: #2a5095;
+	margin-bottom: 0;
+}
+
+.backgroundSpace1 .mediumTitle{
+	margin-top: 7px;
+	padding-left: 0;
+	margin-bottom: 17px;
+}
+
+.backgroundSpace1.backgroundSpace1Breadcrumbs .mediumTitle {
+    margin-bottom: 10px;
+}
+
+.backgroundSpace1 .backgroundSpace1Breadcrumbs.mediumTitle {
+    margin-bottom: 10px;
+}
+
+.numberBold.sapMText{
+	font-weight:bold;
+	font-family: SourceSansPro-Bold;
+}
+
+.numberBlueBig.sapMText{
+	font-size: 64px;
+    font-weight:bold;
+    color: rgb(76,114,176);
+    font-family: SourceSansPro-Bold;
+}
+
+.textnumberBlueBig.sapMText{
+	color: rgb(76,114,176);
+    font-size:20px;
+}
+
+.statusText.sapMText{
+	color:  #808d11;
+	font-weight:bold;
+	font-family: SourceSansPro-Bold;
+}
+
+.sapMTitle{
+  font-family: SourceSansPro-Semibold;
+  color: #2a5095;
+  padding-left: 0;
+}
+
+.sapMLabel{
+	font-weight: 600;
+	color: #4485c9;
+    font-family: SourceSansPro-Semibold;
+	 overflow: visible;
+}
+
+.smallLabel.sapMLabel{
+	font-weight: 600;
+	color: #4485c9;
+    font-family: SourceSansPro-Semibold;
+    font-size:24px;
+}
+
+.smallLabelBold.sapMLabel{
+	color: #4485c9;
+	font-weight:bold;
+	font-family: SourceSansPro-Bold;
+    font-size:24px;
+}
+
+.tinyLabel.sapMLabel {
+	font-family: SourceSansPro-Semibold;
+	font-size: 14px;
+	font-weight: 600;
+	color: #515151;
+}
+
+.sapMText{
+  font-family: SourceSansPro-Light;
+  font-weight: 600;
+  color: #515151;
+  font-size:14px;
+}
+
+.blueText{
+	color: #2a5095;
+}
+
+.sapMText.blueText{
+	color: #2a5095;
+}
+
+.tinyText.sapMText{
+  /*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Semibold;
+  font-weight: normal;
+  color: #515151;
+  font-size:14px;
+}
+
+.tinyTextBold.sapMText{
+  font-weight:bold;
+  font-family: SourceSansPro-Bold;
+  color: #515151;
+  font-size:14px;
+}
+
+.tinyTextBoldRed.sapMText {
+  font-weight:600;
+  font-family: SourceSansPro-Light;
+  color: #9c2f2f;
+  font-size:14px;
+}
+
+.smallText.sapMText{
+  font-family: SourceSansPro-Light;
+  font-weight: 600;
+  color: #515151;
+  font-size:24px;
+}
+
+.smallTextBold.sapMText{
+  font-weight:600;
+  font-family: SourceSansPro-Light;
+  color: #515151;
+  font-size:24px;
+}
+
+.smallTextBoldBlue.sapMText{
+	font-weight:600;
+	font-family: SourceSansPro-Bold;
+	color: #2a5095;
+	font-size:20px;
+}
+
+.smallTextBold.blueText{
+  color: #4485c9;
+}
+
+.textBoldBlue.sapMText{
+	font-weight:600;
+	font-family: SourceSansPro-Bold;
+	color: #2a5095;
+	font-size:16px;
+}
+
+.sapMBreadcrumbs {
+    margin-top: 20px;
+    padding: 0;
+    color: #2a5095;
+    outline:0 !important;
+}
+
+.sapMLnk{
+	color: #2a5095 !important;
+	outline:0 !important;
+	font-family: SourceSansPro-Semibold;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.mediumLink.sapMLnk{
+	font-size: 20px;
+}
+
+.sapMLnk.sapMLnkMaxWidth{
+	color: #2a5095 !important;
+	outline:0 !important;
+}
+
+.sapMLnk:hover:not(.sapMLnkDsbl) {
+    color: #2a5095 !important;
+    outline:0 !important;
+}
+.sapMLnk:visited {
+    color: #2a5095 !important;
+    outline:0 !important;
+}
+
+.sapMLnk:focus {
+    color: #2a5095 !important;
+    outline:0 !important;
+}
+.sapMLnk:active {
+    color: #2a5095 !important;
+    outline:0 !important;
+}
+
+
+
+
+.filter .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsCenter.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMHBox{
+    background: #dbdfe5;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 6px;
+    /* margin-bottom: 30px; */
+    border-radius: 16px;
+}
+
+.filter .sapMText {
+    font-family: SourceSansPro-Italic;
+    font-weight: 600;
+    color: #515151;
+    font-size: 16px;
+}
+
+.attachments .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsCenter.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMHBox{
+	border: solid 1px #dbdfe5;
+	background:#ffffff;
+	padding-left:15px;
+	padding-right:15px;
+	margin: 15px;
+	/*margin-bottom: 30px;*/
+	border-radius: 10px;
+}
+
+.attachments .sapMText {
+    font-family: SourceSansPro-Bold;
+    font-weight: 600;
+    color: #59656f;
+    font-size: 16px;
+}
+/*______________END GENERAL TEXT ___________________________*/
+
+
+
+
+
+
+
+
+
+/*---------------BUTTONS------------------------*/
+.sapMBtnInner {
+	font-family: SourceSansPro-Semibold;
+	text-align: center;
+	vertical-align:center;
+	position: relative;
+	background: transparent;
+	border-radius: 0.25rem;
+	border:none;
+	outline:0 !important;
+	font-size:16px;/*--------------------------------CAMBIO 26/09/2016--------------------*/
+}
+
+.sapMBtnInner:active  {
+	 outline:0 !important;
+}
+
+.sapMBtnInner:focus  {
+	 outline:0 !important;
+	 background:#46d46f;
+}
+
+.sapMBtnInner:hover  {
+	 outline:0 !important;
+}
+
+.sapMBtnDefault.sapMBtnHoverable.sapMBtnIconFirst.sapMBtnInner.sapMFocusable{
+	background: transparent;
+	color: white !important;
+}
+
+.btnColorWhite .sapMBtnIcon, .btnColorWhite .sapMBtnContent {
+	color: white !important;
+	font-size: 16px;
+}
+
+.btnGreen .sapMBtnInner  {
+	border-radius: 4px;
+	color: white ;
+	border-color: #808d11 !important; /*JPM act. versión*/
+	background: #808d11 !important; /*JPM act. versión*/
+	/*padding: 0px 38px !important;*/
+	text-shadow: none !important;
+	 -webkit-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+    -webkit-box-shadow-gradient: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	-moz-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	 box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+	 outline:0 !important;
+	 width: 155px;
+}
+
+.btnGreen:hover .sapMBtnInner{
+	background-color: #bfcc4e !important;
+}
+	
+.btnGreen:active .sapMBtnInner{
+	background-color: #bfcc4e !important;
+	outline:0 !important;
+}
+
+.btnGreen.sapMBtn.sapMBtnBase.sapMBtnDisabled .sapMBtnDefault.sapMBtnInner.sapMBtnText{
+	color: white ;
+	border-color: #999999  ;
+	background: #999999  ;
+}
+
+/* Aplicamos el estilo a traves del footer, para sobrescribir el que viene por defecto en library.css */
+.sapMFooter-CTX .btnGreen .sapMBtnInner {
+	background: #808d11;
+	color: white;
+}
+.btnGreen:not(.sapMBtnDisabled):hover .sapMBtnInner {
+	background: #bfcc4e !important;
+	color: white !important;
+}
+.btnGreen:not(.sapMBtnDisabled):active .sapMBtnInner {
+	background: white !important;
+	color: #bfcc4e !important;
+}
+.sapMFooter-CTX .btnGreen  .sapMBtnInner {
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.35) !important;
+}
+
+.btnLarge .sapMBtnInner  {
+	 width: 250px !important;
+}
+
+.btnRed .sapMBtnInner  {
+	color: white ;
+	border-color: #9c2f2f;
+	background: #9c2f2f ;
+	text-shadow: none !important;
+	 -webkit-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+    -webkit-box-shadow-gradient: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	-moz-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	 box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+	 outline:0 !important;
+	 font-size: 14px;
+}
+
+.btnRed:hover .sapMBtnInner{
+	background-color: #d75b5b;
+}
+	
+.btnRed:active .sapMBtnInner{
+	background-color: #d75b5b;
+	outline:0 !important;
+}
+
+.btnRed.sapMBtn.sapMBtnBase.sapMBtnDisabled .sapMBtnDefault.sapMBtnInner.sapMBtnText{
+	color: white ;
+	border-color: #999999  ;
+	background: #999999  ;
+}
+
+.btnBlue .sapMBtnInner  {
+	border-radius: 4px;
+	color: white ;
+	border-color: #4366a6;
+	background: #4366a6 ;
+	/*padding: 0px 38px !important;*/
+	text-shadow: none !important;
+	 -webkit-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+    -webkit-box-shadow-gradient: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	-moz-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	 box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+	 outline:0 !important;
+	 width: 155px;
+}
+
+.btnBlue:hover .sapMBtnInner{
+	background-color: #7C9BD6;
+}
+	
+.btnBlue:active .sapMBtnInner{
+	background-color: #7C9BD6;
+	outline:0 !important;
+}
+
+.btnBlue.sapMBtn.sapMBtnBase.sapMBtnDisabled .sapMBtnDefault.sapMBtnInner.sapMBtnText{
+	color: white ;
+	border-color: #999999  ;
+	background: #999999  ;
+}
+
+.btnBlueLarge .sapMBtnInner  {
+	 width: 260px;
+}
+
+
+.btnBorderBlue .sapMBtnInner  {
+	color:#4C72B0 !important;
+	font-weight:bold;
+	border: 2.5px solid  #4485c9 !important; /*Azul medio*/ /*JPM act. Versión*/
+	background: #ffffff !important;
+	text-shadow: none !important;
+	-webkit-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+    -webkit-box-shadow-gradient: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	-moz-box-shadow: 5px 7px 3px 1px rgba(179,179,179,0.63);
+	 box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+	 width: 150px;
+}
+
+.btnBorderBluePopup .sapMBtnInner  {
+	width: inherit;
+	font-size: 16px;
+}
+.btnBorderBlue .sapMBtnDefault.sapMBtnHoverable.sapMBtnIconFirst.sapMBtnInner.sapMFocusable{
+	border: 2.5px solid #8ea9db !important; /*Azul medio*/
+	outline: 0 !important;
+}
+
+.btnBorderBlue:hover .sapMBtnInner{
+	border: 2.5px solid #8ea9db !important; /*Azul medio*/
+	outline: 0 !important;
+}
+	
+.btnBorderBlue:active .sapMBtnInner{
+	border: 2.5px solid #8ea9db !important; /*Azul medio*/
+	outline: 0 !important;
+}
+
+.btnBorderBlue.sapMBtn.sapMBtnBase.sapMBtnDisabled .sapMBtnDefault.sapMBtnInner.sapMBtnText{
+	color:#c8c8c8;
+	border: 2.5px solid  #c8c8c8; /*Azul medio*/
+}
+
+.btnBorderBlueLarge .sapMBtnInner  {
+	 /*width: 260px;*/
+}
+
+.btnChangeState .sapMBtnInner  {
+	color: white;
+	border-color: #808d11 ;
+	background: #808d11;
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.btnChangeState.sapMBtn.sapMBtnBase.sapMBtnDisabled .sapMBtnDefault.sapMBtnInner.sapMBtnText{
+	color: white ;
+	border-color: #999999  ;
+	background: #999999  ;
+}
+
+.btnNext:hover .sapMBtnInner  {
+	background-color:transparent;
+	color: #4C72B0;
+	outline: 0 !important;
+}
+
+.btnNext:active .sapMBtnInner  {
+	background-color:transparent;
+	color: #4C72B0;
+	outline: 0 !important;
+}
+
+.btnNext .sapMBtnInner  {
+	border-color:transparent;
+	box-shadow: none;
+	color: #4C72B0;
+	background-color:transparent;
+	border-left-color: #d8d7d7 ;
+	font-size:0.8rem;
+	font-weight:600;
+	font-family: SourceSansPro-Bold;
+	border-left: 1.5px solid #C8C8C8;
+	border-radius: 0px;
+}
+
+.btnNext .sapMBtnIconFirst .sapUiIcon:before{
+	color:#4C72B0; /*Azul oscuro*/
+}
+.btnNext .sapMBtnCustomIcon.sapMBtnIcon:before.sapMBtnIconLeft.sapUiIcon.sapUiIconMirrorInRTL {
+	color:#4C72B0; /*Azul oscuro*/
+}
+
+.btnNext .sapUiIcon:before {
+	color:#4C72B0; /*Azul oscuro*/
+}
+
+.sapMBtnBack .sapUiIcon:before {
+	color:#4C72B0; /*Azul oscuro*/
+}
+
+.sapMBtn {
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    border: none;
+    outilne:0;
+    background-color: transparent; 
+}
+
+.sapMBtnBase{
+	background:transparent;
+	position: relative;
+	outline:0 !important;
+	vertical-align: top;
+}
+
+/*____________________END BUTTONS________________________*/
+
+
+
+
+/*-----------------------PAGINATOR -------------------------*/
+
+.btnPaginator .sapMBtnInner{
+	background: #f1f1f1;
+	border: 0.5px solid #dbdfe5;
+}
+
+.btnPaginator .sapMBtnInner:active{
+	background-color:#5c87bf;
+	border: 0.5px solid #dbdfe5;
+}
+
+.btnPaginator .sapMBtnInner:focus{
+	background-color:#5c87bf;
+	border: 0.5px solid #dbdfe5;
+}
+
+.btnPaginator div.sapMBtnInner.sapMBtnEmphasized {
+    background-color:#5c87bf;
+    border: 0.5px solid #5c87bf;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+.backgroundSpace2.btnPaginator{
+	/*margin-bottom: 10px;-----------------------------------------CAMBIO TLs JAVI 15/09/2016--------*/
+	padding-top: 1px;
+}
+
+.btnPaginator .numberButton .sapMBtnInner{
+	border-radius: 0rem;
+	border-right: 0px;
+}
+.btnPaginator .firstButton .sapMBtnInner{
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    border-right: 0px;
+}
+.btnPaginator .lastButton .sapMBtnInner{
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+}
+
+/*_________________________ END PAGINATOR ___________________*/
+
+
+
+
+
+/*------------------------- ICONS -------------------------------*/
+.iconBlueCircle{
+	color: rgba(76, 114, 176, 0.37);
+    border-radius: 5rem;
+    background: #ffffff;
+    padding: 40px;
+}
+
+.iconGreenCircle{
+	color: #808d11;
+    border-radius: 5rem;
+    background: #e3ed8c;
+    padding: 10px;
+    /*margin-left: 150px;----------------------------------CAMBIO JAVI PARA TLS 13/09/2016*/
+    margin-bottom: 20px;
+    
+}
+
+.iconRedCircle{
+	color: #9c2f2f;
+    border-radius: 5rem;
+    background: #e3ed8c;
+    padding: 10px;
+    /*margin-left: 150px;----------------------------------CAMBIO JAVI PARA TLS 13/09/2016*/
+    margin-bottom: 20px;
+    
+}
+
+.iconBlue{
+	color: rgba(76, 114, 176, 0.37);
+    background: transparente;
+}
+
+.iconPurple{
+	color:  #8c2f9c;
+    background: transparent;	
+}
+
+.iconPurple .sapSuiteUiCommonsTimelineItemWrapper .sapSuiteUiCommonsTimelineItemIcon{
+	color:  #8c2f9c;
+    background: transparent;	
+}
+
+.iconGreen{
+	color:  #808d11;
+    background: transparent;	
+}
+
+.iconGreen .sapSuiteUiCommonsTimelineItemWrapper .sapSuiteUiCommonsTimelineItemIcon{
+	color:  #808d11;
+    background: transparent;	
+}
+
+.iconGreen:active.sapUiIcon:before{
+   		border:none;
+   		color:#bfcc4e;
+   		outline:0 !important;
+}
+	
+.iconGreen:hover.sapUiIcon:before{
+   		border:none;
+   		color:#bfcc4e;
+   		outline:0 !important;
+}
+	
+.iconRed{
+	color:  #9c2f2f !important;
+    background: transparent;	
+}
+
+.iconRed:active.sapUiIcon:before{
+   		border:none;
+   		color:#d75b5b;
+   		outline:0 !important;
+}
+	
+.iconRed:hover.sapUiIcon:before{
+   		border:none;
+   		color:#d75b5b;
+   		outline:0 !important;
+}
+/*_____________________ END ICONS _____________________________*/
+
+
+
+
+
+
+
+/*-------------------- INPUT----------------------*/
+.sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):hover {
+    border-color: #bfcc4e;
+}
+
+.sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):active {
+    border-color: #bfcc4e;
+}
+
+.sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):focus {
+    border-color: #bfcc4e;
+}
+/*________________END INPU_________________*/
+
+
+
+
+
+
+
+
+/*-------------------- COMBO BOX----------------------*/
+.sapMComboBoxBasePressed:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled) {
+    border-color: #bfcc4e !important;
+}
+
+.sapMComboBoxBasePressed:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled):hover {
+    border-color: #bfcc4e !important;
+}
+
+.sapMComboBoxBasePressed:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled):active {
+    border-color: #bfcc4e !important;
+}
+
+.sapMComboBoxBasePressed:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled):focus {
+    border-color: #bfcc4e !important;
+}
+
+.sapMComboBoxBase:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled):hover {
+    border-color: #bfcc4e !important;
+}
+
+.sapMComboBoxBase:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled):active {
+   border-color: #bfcc4e !important;
+}
+
+.sapMComboBoxBase:not(.sapMComboBoxTextFieldReadonly):not(.sapMComboBoxTextFieldState):not(.sapMComboBoxTextFieldDisabled):focus {
+    border-color: #bfcc4e !important;
+}
+
+.sapMComboBox .sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner) {
+    border: none !important;
+}
+
+.sapMComboBoxBasePressed .sapMComboBoxBaseArrow, html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background: #ffffff;
+    border:#999999 ;
+    border-color: #999999 ;
+    outline: 0 !important;
+}
+
+.sapMComboBoxBasePressed .sapMComboBoxBaseArrow::before{
+	color: #999999;
+	border-color: #999999 ;
+	outline: 0 !important;
+}
+
+.sapMSelectList {
+    background: #ffffff;
+    border-right: 1px solid #bfcc4e;
+    border-left: 1px solid #bfcc4e;
+    border-bottom: 1px solid #bfcc4e;
+}
+
+.sapMSelectListItemBaseHoverable:hover {
+    background: rgba(154, 174, 4, 0.42)
+}
+
+.sapMSelectListItemBaseSelected {
+    background:rgba(154, 174, 4, 0.55);
+}
+/*__________________END COMBO BOX __________________________*/
+
+
+
+
+
+
+/*_______________ USERCOMBO ____________________*/
+
+.userCombo.sapMPopover{
+	    border: 2px solid #bfcc4e;
+}
+
+.userCombo .sapMTB {
+    margin-left: -17px;
+}
+
+.userCombo .sapMLIB {
+    border: none;
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.userCombo .sapMLIB:hover {
+    background: rgba(154, 174, 4, 0.42);
+}
+
+.userCombo .sapMLIB:active {
+    background:rgba(154, 174, 4, 0.55);
+}
+
+.userCombo .sapMLIB:focus {
+    background:rgba(154, 174, 4, 0.55);
+}
+
+.userCombo .sapMText {
+    font-family: SourceSansPro-Light;
+    font-weight: 600;
+    color: #515151;
+    font-size: 16px;
+}
+
+.userCombo .sapMSFI {
+    color: #666666;
+    font-family: SourceSansPro-Italic;
+    font-weight: 600;
+    padding-left: 7px;
+    font-size: 16px;
+    /*padding-top: 10px;*/
+}
+
+.userCombo .sapMSFB {
+	color: #666666;
+}
+
+.userCombo  .sapMSFB:hover {
+    background: transparent;
+    color: #666666;
+}
+
+.userCombo  .sapMSFB:active {
+    background: transparent;
+    color: #666666;
+}
+
+.userCombo  .sapMSFB:focus {
+    background: transparent;
+    color: #666666;
+}
+
+.userCombo .sapMSFF{
+	border:none;
+	background:transparent;
+	color: #ffffff !important;
+}
+
+:not(.sapMSFDisabled)>.sapMSFF:hover {
+    background: rgba(154, 174, 4, 0.42);
+}
+
+
+/*-----------------END USERBOMBO -------------------*/
+
+
+
+
+
+
+
+
+/*-------------------- COMBOBOX STATUS----------------------*/
+
+/*
+.comboStatusPurple{
+	background:#8c2f9c;
+}*/
+
+.comboStatusPurple .sapMInputBaseInner{
+	background:#8c2f9c;
+	color: #ffffff;
+	padding-right: 0;
+}
+
+/*
+.comboStatusPurple .sapMComboBoxTextFieldArrow{
+	background:#8c2f9c;
+	color: #ffffff;
+}
+*/
+
+.comboStatusPurple .sapMComboBoxBasePressed .sapMComboBoxBaseArrow, .comboStatusPurple html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background:#8c2f9c;
+}
+
+
+/*
+.comboStatusBlue{
+	background: #3e5ac5 ;
+}*/
+
+.comboStatusBlue .sapMInputBaseInner{
+	background: #3e5ac5 ;
+	color: #ffffff;
+}
+
+/*
+.comboStatusBlue .sapMComboBoxTextFieldArrow{
+	background: #3e5ac5 ;
+	color: #ffffff;
+}*/
+
+.comboStatusBlue .sapMComboBoxBasePressed .sapMComboBoxBaseArrow, .comboStatusBlue html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background:#3e5ac5;
+}
+
+
+
+/*
+.comboStatusLightBlue{
+	background: #3e8bc5 ;
+}*/
+
+.comboStatusLightBlue .sapMInputBaseInner{
+	background: #3e8bc5 ;
+	color: #ffffff;
+}
+/*
+.comboStatusLightBlue .sapMComboBoxTextFieldArrow{
+	background: #3e8bc5 ;
+	color: #ffffff;
+}*/
+
+.comboStatusLightBlue .sapMComboBoxBasePressed .sapMComboBoxBaseArrow, .comboStatusBlue html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background:#3e8bc5;
+}
+
+
+
+/*
+.comboStatusSea{
+	background: #2f9b9c ;
+}*/
+
+.comboStatusSea .sapMInputBaseInner{
+	background: #2f9b9c ;
+	color: #ffffff;
+	padding-right: 0;
+}
+
+/*
+.comboStatusSea .sapMComboBoxTextFieldArrow{
+	background: #2f9b9c ;
+	color: #ffffff;
+}*/
+
+.comboStatusSea .sapMComboBoxBasePressed .sapMComboBoxBaseArrow, .comboStatusBlue html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background:#2f9b9c;
+}
+
+
+/*
+.comboStatusCamel{
+	background: #c5973e ;
+}*/
+
+.comboStatusCamel .sapMInputBaseInner{
+	background: #c5973e ;
+	color: #ffffff;
+}
+
+/*
+.comboStatusCamel .sapMComboBoxTextFieldArrow{
+	background: #c5973e ;
+	color: #ffffff;
+}*/
+
+.comboStatusCamel .sapMComboBoxBasePressed .sapMComboBoxBaseArrow, .comboStatusBlue html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background:#c5973e;
+}
+
+/*________________ END COMBOBOX STATUS_________________*/
+
+
+
+
+
+
+
+
+
+/*----------------- ELEMENT CARDVIEW ---------------*/
+.cardView{
+    height: auto;
+    border-bottom: 2px solid #a0ae2c;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0 1.5px 4px 0 rgba(153, 153, 153, 0.74);
+	outline: 0 !important;
+}
+
+.centerCardView{
+    border-bottom: 2px solid #a0ae2c;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 6px 0 rgba(153, 153, 153, 0.3);
+	margin-top: 11px;
+	margin-bottom: 5px;
+	text-align:center;
+    overflow: visible;
+    padding: 0.5rem !important;
+}
+
+.centerCardView .sapMLabel{
+	text-align:center;
+	font-size: 16px;
+	font-weight: 50;
+	color: #4485c9;
+	font-weight: 900;
+    font-family: SourceSansPro-Bold;
+}
+
+.centerCardView .sapMText{
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center !important;
+  color: #515151;
+  font-family: SourceSansPro-Light;
+}
+/*__________________ END ELEMENT CARDVIEW ________________________*/
+
+
+
+
+
+
+
+
+
+/*----------------- ELEMENT USER CARDVIEW ---------------*/	
+.userCardView{
+    border-bottom: 2px solid #a0ae2c;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0 1.5px 4px 0 rgba(153, 153, 153, 0.74);
+	outline: 0 !important;
+}
+
+.backgroundSpace1 .userCardView{
+	height: 101px;
+	justify-content: flex-start;
+    padding: 0.93rem;
+    /*margin-top: 10px;*/
+}
+
+ .backgroundSpace1Breadcrumbs .userCardView{
+   /*margin-top: -8px;*/
+}
+
+.sapMCustomTile.userCardView{
+	padding: 0;
+	width: 100%;
+}
+
+.userCardView .sapMLabel{
+	text-align:center;
+	font-size: 18px;;
+	font-weight: 50;
+	color: #4485c9;
+    font-family: SourceSansPro-Bold;
+    text-align:start;
+}
+
+.userCardView .sapMText{
+  font-family: SourceSansPro-Light;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #515151;
+  text-align:start;
+}
+
+.userCardView .sapUiIcon:before {
+	 color: #515151;
+	 text-align:center;
+}
+
+.userCardView .sapMFlexBox .sapUiIcon{
+	text-align:center;
+	margin: 18px 0 0 8px;
+}
+
+.userCardView .sapMFlexBox .sapUiIcon.arrowDown{
+	text-align:center;
+	margin: 30px 0 0 28px;
+}
+/*__________________ END ELEMENT USER CARDVIEW ________________________*/
+
+
+
+
+
+
+
+
+
+
+/*-------------BOX -------------------------*/
+.shadowBox{
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0 1.5px 4px 0 rgba(153, 153, 153, 0.74);
+	outline: 0 !important;
+}
+/*________________ END BOX ______________________*/
+
+
+
+
+
+
+
+/*------------USER BAR--------------------------------*/
+.sapUiUfdShellHeader{
+	background-color: #4485c9;
+	/*background-color:#ffffff;*/
+}
+
+
+.sapUiUfdShellHeadItm{
+	color:#ffffff;
+}
+
+.sapUiUfdShellHeadUsrItmImg{
+	color:#ffffff;
+}
+.sapUiUfdShellHeadUsrItmName{
+	color:#ffffff;
+	font-family: SourceSansPro-Light;
+	font-weight:600;
+}
+.sapUiUfdShellHeadUsrItmExp{
+	color:#ffffff;
+}
+
+.sapUiUfdShellSearch{
+	color:#ffffff;
+}
+
+.sapUiUfdShellHeadItm>span, .sapUiUfdShellHeadUsrItm {
+    color:#ffffff !important;
+    text-shadow:none !important;
+}
+
+html.sapUiMedia-Std-Desktop .sapUiUfdShellHeadItm:hover>span, html.sapUiMedia-Std-Desktop .sapUiUfdShellHeadUsrItm:hover>* {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.sapUiUfdShellHeadItm.sapUiUfdShellHeadItmSep{
+	/*background: #2a5095;*/
+	background: #4485c9 ;
+	margin-right: -4px;
+}
+
+.sapUiUfdShellHeadBegin .sapUiUfdShellHeadItm.sapUiUfdShellHeadItmSep{
+	background: #2a5095;
+	margin-right: -4px;
+}
+
+.sapUiUfdShellHeadEnd .sapUiUfdShellHeadItm.sapUiUfdShellHeadItmSep{
+	/*background: #2a5095;*/
+	background: #4485c9 ;
+	margin-right: -4px;
+}
+
+.sapUiUfdShellHeadItm.sapUiUfdShellHeadItmSep.backgroundBell{
+	background: #4485c9 !important;
+}
+
+.backgroundBell .sapUiUfdShellHeadItm.sapUiUfdShellHeadItmSep{
+	background: #4485c9 !important;
+}
+
+.sapMSFB{
+	color:#ffffff;
+}
+
+/*_______________END USER BAR____________________________*/
+
+
+
+
+
+
+
+.projectInfo{
+	marggin-top: 10px;
+}
+
+.projectInfo.sapMVBox{
+	margin-top:16px;
+}
+
+.projectInfo .sapMLabel{
+	font-size: 24px;
+}
+
+/*
+.projectInfo .sapMText{
+	font-size: 14px;
+}*/
+
+
+
+
+
+
+/*-------------- GENERAL BOX----------------------*/
+.boxCenter .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsCenter.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyCenter.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMVBox{
+		margin-bottom: 47px;
+}
+
+.boxCenter .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsCenter.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyCenter.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMVBox .sapMLabel.sapMLabelMaxWidth.sapUiSelectable{
+	font-family: SourceSansPro-Semibold;
+  font-size: 24px;
+  color: #2a5095;
+}
+
+.boxCenter .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsCenter.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyCenter.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMVBox .sapMText.sapMTextMaxWidth.sapUiMediumMarginBegin.sapUiSelectable{
+  color: #2a5095;
+}
+ 
+.sapMtext.sapMTextMaxWidth.sapUiMediumMarginBegin.sapUiSelectable{
+	color: #2a5095;	
+}
+
+.sapUiMediumMarginBegin.blueText{
+	color: #2a5095;	
+}
+
+.sapUiMediumMarginBegin.blueText.boldText{
+	color: #2a5095;	
+	font-weight:bold;
+	font-family: SourceSansPro-Semibold;
+}
+/*__________________END GENERAL BOX ___________________*/
+
+
+
+
+
+
+
+/*--------- GENERAL TABLE  -------------------------*/
+.sapMTB {
+    height: 36px;
+    background: transparent;
+	border-bottom: none;
+}
+
+.sapMListTblCell {
+    padding: 0 2px; 
+    vertical-align: middle;
+    height: 50px;
+    font-size: 0.875rem;
+}
+
+	/*---------ELEMENT TABLEGREY --------*/
+	.tableGrey{
+		background: transparent ;
+	    /*border-bottom: 1px solid #DBDFE5 ;*/
+		font-size: 16px;
+		font-weight: normal;
+		color: #515151;
+		outline: 0 !important;
+	}
+	
+	.tableGrey .sapMIBar.sapMListHdrTBar.sapMTB.sapMTB-Transparent-CTX.sapMTBInactive.sapMTBNewFlex{
+		height:60px;
+		/*background: white;*/
+	}
+	
+	.tableGrey .sapMTB-Transparent-CTX>.sapMTitleTB.sapMTitleStyleAuto {
+    	font-size: 28px;
+	}
+
+	.tableGrey .btnGreen .sapMBtnInner{
+		width:260px;
+		height: 43px;
+	}
+	
+	.tableGrey .btnBorderBlue .sapMBtnInner{
+		width:220px;
+		height: 43px;
+	}
+	
+	.tableGrey .sapMTB-Transparent-CTX.sapMTB {
+     padding-left: 0;
+	}
+	
+	.tableGrey .sapMIBar .sapMBarChild:first-child {
+	    margin-left: 0;
+	}
+	
+	.tableGrey .sapMIBar .sapMBarChild { /*---------------CAMBIO TLs JAVI 19/09/2016---------------*/
+		margin-left: 0;
+		margin-right: 22px;
+	}
+	
+	.tableGrey.backgroundSpace2.sapMList.sapMListBGTranslucent.sapMListTblCnt{
+		background-color: #EBECF0 ; /*Gris clarito*/
+	}
+	
+	.tableGrey>table{
+		box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+		/*margin-top: 7px; #jose */ 
+	}
+
+	.tableGrey .sapMListTbl th {
+		background-color: #dee2e7;
+		height: 52px;
+		outline: 0 !important;
+		padding-left: 2px;
+    	padding-right: 2px;
+	}
+
+	.tableGrey .sapMListTbl .sapMListTblRow.sapMListTblHeader .sapMText {
+	    font-size: 14px;
+	    color: #515151;
+	    font-weight: 900;
+	    font-family: SourceSansPro-Bold;
+	    padding-left: 2px;
+    	padding-right: 2px;
+	}
+	
+	.tableGrey .sapMListTbl .sapMText {
+	    padding-top: 1px;
+	    font-size: 16px;
+	    color: #515151;
+	    font-family: SourceSansPro-Light;
+	    padding-left: 2px;
+    	padding-right: 2px;
+    	font-weight:600;
+	}
+
+	.tableGrey .numberBold.sapMText{
+		font-family: SourceSansPro-Bold;
+	    	font-size: 17px;
+		text-align: right;
+	}
+
+   .tableGrey .sapMBtnDefault.sapMBtnHoverable.sapMBtnIconFirst.sapMBtnInner.sapMFocusable  {
+   		border:none;
+   		background: transparent;
+   		outline: 0 !important;
+   }
+
+	.tableGrey .sapUiIcon:before{
+		color:#808d11 ; 
+	}
+	
+	.tableGrey .sapMBtnDefault.sapMBtnHoverable.sapMBtnIconFirst.sapMBtnInner.sapMFocusable:active  .sapUiIcon:before{
+   		border:none;
+   		color:#bfcc4e;
+	}
+
+	.tableGrey.backgroundSpace2.displayRight.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1{
+		background-color: #EBECF0 ; /*Gris clarito*/
+	}
+	
+	.tableGrey.backgroundSpace2.displayRight.sapUiRespGrid.sapUiRespGridHSpace1{
+		padding-right:60px;
+		padding-top: 17px;
+		width: 95%;
+	}
+	
+	.tableGrey .btnNext .sapUiIcon:before {
+		color:#4C72B0; /*Azul oscuro*/
+	}
+	
+	
+	.tableGrey .sapMTB-Transparent-CTX .sapMText {
+    	font-family: SourceSansPro-Light;
+    	text-shadow: none !important;
+    	color: #515151;
+    	font-size:16px;
+    	font-weight: 600;
+	}
+	
+	/* Alternar color de las filas de la tabla */
+	.tableGrey tr:nth-child(even){
+	    background: rgba(222, 226, 231, 0.6) !important; /*JPM act. Versión*/
+	}
+	
+	/*.tableGrey.tableGreyMab tr:nth-child(even){
+	    background: rgba(222, 226, 231, 0.6);
+	}*/
+	
+/*_________ END ELEMENT TABLEGREY ___________*/
+
+
+
+
+
+
+
+
+	/* ___ COLORES ESTADOS ___ */
+	.cssStatus .sapMFlexItem {
+	    /* La propiedad 'background' se establece desde controlador */
+	    padding: 1px 10px 4px;
+	    border-radius: 5px;
+	}
+	
+	.cssStatus .sapMFlexItem .sapMText {
+		color: #ffffff;
+		font-size: 14px;
+	}
+	.cssStatusHoldPendingReceipts .sapMFlexItem {
+		background : #9c2f2f;
+	}
+	.cssStatusPendingManagerApproval .sapMFlexItem {
+		background : #8c2f9c;
+	}
+	.cssStatusSaved .sapMFlexItem {
+		background : #c5973e;
+	}
+	.cssStatusPaid .sapMFlexItem {
+		background : #2f9b9c;
+	}
+
+
+/* _________ FIN COLORES ESTADOS _________ */
+	
+
+	
+	
+	
+	
+
+	
+/*---------ELEMENT TABLECARDVIEW --------*/
+/*.tableCardView{
+	background: transparent ;
+    border-bottom: none;
+    font-weight:normal;
+    font-size:16px;
+    color:#444444;
+    margin-top: 10px;
+    outline: 0 !important;
+}*/
+.tableCardView {
+    border-bottom: 2px solid #a0ae2c;
+	border-radius: 2px;
+	margin-top: 10px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 6px 0 rgba(153, 153, 153, 0.3);
+	text-align:center;
+	font-size:16px;
+	font-weight:normal;
+	color:#444444;
+}
+
+.tableCardView>table{
+	border-bottom: 2px solid #a0ae2c;
+	border-radius: 2px;
+	background-color: #ffffff;
+	box-shadow: 0 1.5px 4px 0 rgba(153, 153, 153, 0.74);
+}
+
+
+
+
+.tableCardView .sapMListTbl th {
+	background: #ffffff;
+    border-bottom: 1px solid #d8d2d2;
+    color: #515151;
+    font-weight:bold;
+    font-size: 16px;
+    margin: 13px 1.875rem;
+    vertical-align: middle;
+}
+
+.tableCardView .sapMListTbl th .sapMText{
+	font-weight:bold;
+	font-family: SourceSansPro-Semibold;
+	color: #515151;
+	font-size: 15px;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+
+.tableCardView .sapMLIBShowSeparator>td {
+	border: none;
+    padding-top: 13px;
+}
+
+.tableCardView .sapUiIcon:before{
+	color:#808d11 ; /*verde*/
+}
+
+.tableCardView .sapMLnk {
+    color: #4366a6;
+	font-family: SourceSansPro-Light;
+	font-weight: 600;
+    vertical-align: top;
+    /*margin-top: 16px;*/
+}
+
+.tableCardView .sapMLnk.sapMLnkMaxWidth{
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+.tableCardView .sapMLIB.sapMLIB-CTX.sapMLIBFocusable.sapMLIBShowSeparator.sapMLIBTypeInactive.sapMListTblRow{
+	border: 1px solid #bfbfbf;
+	margin: 19px.25rem 0;
+	height: 40px;
+}
+
+
+
+/*_________ END ELEMENT TABLECARDVIEW ___________*/
+
+/***** Adapta un SearchField + Button Help al estilo de un Input con Help ******/
+.cssSearchFieldAsInput .sapMBtnDefault {
+	border: 1px solid #bfbfbf;
+    border-left: 0px;
+    border-radius: 0px;
+}
+.cssSearchFieldAsInput .sapMBtnDefault:hover {
+	background-color: #e6e6e6;
+}
+.cssSearchFieldAsInput .sapMBtnDefault:active {
+	background-color: #444444;
+}
+/*.cssSearchFieldAsInput form {
+	border-right: 0px;
+}*/
+/******/
+
+
+
+
+	/*---------ELEMENT TABLEBLUE --------*/
+	.tableBlue{
+		background: transparent ;
+	    border-bottom: none;
+	    font-weight:normal;
+	    font-size:0.9rem;
+	    color:#444444;
+	    font-family: SourceSansPro-Light;
+	    font-weight: 600;
+	}
+	
+	.paddingTableBlue{
+		padding-right:25px;
+	}
+	
+	.tableBlue.backgroundSpace3.displayRight.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1{
+	     padding-top: 10px;
+	}
+	
+	.tableBlue.backgroundSpace3.displayRight.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1 .sapUiRespGridSpanL2.sapUiRespGridSpanM2.sapUiRespGridSpanS2.sapUiRespGridSpanXL2{
+	     margin-right: -36px;
+	}
+	
+	.tableBlue.mediumTitle{
+		padding-bottom: 18px;
+		font-size: 28px;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+		font-weight: 600;
+		color: #2a5095;
+		border:none;
+	}
+	
+	.tableBlue>table{
+		box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+	}
+	
+	.tableBlue .sapMListTbl th {
+		background: rgb(76,114,176);
+	    border-bottom: 1px solid rgb(76,114,176) ;
+	    border-top: 1px solid rgb(76,114,176);
+	    color: #ffffff;
+	    font-weight: 600;
+	    font-size: 16px;
+	    margin: 0 1.875rem;
+	    /*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+	    vertical-align:middle;
+	}
+	
+	.tableBlue .sapMListTbl th .sapMText{
+		font-weight: 600;
+		color: #ffffff;
+		font-size: 14px;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+	}
+	
+	.tableBlue .sapMTB-Transparent-CTX .sapMText {
+    	font-weight: normal;
+    	font-family: SourceSansPro-Light;
+    	text-shadow: none !important;
+    	color: #ffffff;
+    	font-size:16px;
+    	font-weight: 600;
+	}
+	
+	.tableBlue .sapMTB-Transparent-CTX .sapMText {
+    	font-weight: normal;
+    	font-family: SourceSansPro-Light;
+    	font-weight: 600;
+    	text-shadow: none !important;
+    	color: #ffffff;
+    	font-size:16px;
+	}
+	
+	.tableBlue .sapUiIcon:before{
+		color:#ffffff ; 
+		border:none;
+	}
+	
+	.tableBlue .sapMObjectIdentifierTitle .sapMText {
+		color:rgb(76,114,176);
+		font-weight:bold;
+		font-size: 34px;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+		font-weight: 600;
+	}
+	
+	.tableBlue .sapMIBar {
+		background: rgb(76,114,176);
+		font-weight: 600;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+	}
+	
+	.tableBlue .sapMText{
+		font-size: 14px;
+		font-weight: 600;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+	}
+	
+	.tableBlue .btnNext .sapUiIcon:before {
+		color:#4C72B0; /*Azul oscuro*/
+	}
+	
+	.tableBlue .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxBGTransparent.sapMFlexBoxJustifySpaceBetween.sapMFlexBoxWrapNoWrap.sapMHBox .sapMText.sapMTextBreakWord.sapMTextMaxWidth.sapUiSelectable{
+		color:rgb(76,114,176); 
+			font-weight:bold;
+			font-size: 1.6rem;
+	}
+	
+	.tableBlue.sapMIBar .sapMTB-Transparent-CTX .sapMText {
+	    font-weight: normal;
+	    font-family: SourceSansPro-Light;
+	    font-weight: 600;
+	    text-shadow: none;
+	    color: #ffffff;
+	}
+	
+	.tableBlue .numberBold.sapMText{
+		font-weight:bold;
+		font-family: SourceSansPro-Semibold;
+		color:#4485c9; /*Azul*/
+	}
+	
+	.tableBlue  .sapMPanelContent {
+	    padding: 0;
+	    box-sizing: border-box;
+	    overflow: visible;
+	}
+	
+	.tableBlue .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxBGTransparent.sapMFlexBoxJustifySpaceBetween.sapMFlexBoxWrapNoWrap.sapMHBox{
+		background: #dee2e7;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
+	.tableBlue .borderLeftWhite {
+	    padding-left: 50px;
+	}
+/*_________ END ELEMENT TABLEBLUE ___________*/
+
+
+
+
+
+
+
+
+/*____________ TABLEWHITE ______________________*/
+
+.tableWhite .sapMListTbl th {
+    border: none;
+    background: transparent;
+    padding-top: 21px;
+    height: 16px;
+}
+
+.tableWhite .sapMListTbl .sapMListTblRow.sapMListTblHeader .sapMText{
+	 color: #666666;
+    font-size: 0.875rem;
+    font-family: SourceSansPro-Bold;
+}
+
+
+.tableWhite .sapMListModeNone.sapMListShowSeparatorsNone.sapMListTbl.sapMListUl{
+	margin-left:-15px;
+	margin-right:-15px;
+}
+/*-------------END TABLE WHITE -------------------------*/
+
+/*-----------ONLYMAB-------*/
+.hboxTitles>.sapMFlexItem{
+	height: 0;
+    z-index: 1;
+}
+
+.phoneToolbarTable{
+	width:100%;
+}
+
+.phoneToolbarTable.searchUser>.sapMFlexItem:first-child{
+	height: 20px;
+}
+
+.phoneToolbarTable>.sapMFlexItem{
+	text-align:center;
+}
+
+.cssEstadoSelect>input{
+	width:80%;
+	border-radius:10px;
+}
+
+.cssEstadoSelect{
+	border:none;
+}
+
+.cssEstadoSelect>button{
+	background-color: transparent;
+}
+/*----------END ONLY MAB-----------*/
+
+
+
+
+/*-----------------TABMAB -------------*/
+.tabMab .sapMITBFilter{
+	background:#4366a6;
+	opacity: 0.7;
+}
+
+.tabMab .sapMITH {
+    background: #EBECF0;
+    border: none;
+}
+
+.tabMab .sapMITH .sapMITBHead {
+    margin-left:0em; 
+}
+
+.tabMab .sapMITH .sapMITBHead {
+
+
+    height: 100%;
+    margin-right: 0em; 
+}
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter{
+
+	background: #5d7fbd;
+	padding-left: 32px;
+	padding-right: 32px;
+	margin-right:2px;
+}
+
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter .sapMITBText{
+	color: #e1dfdf;
+}
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter:hover{
+	background:#4366a6;
+	opacity: 1;
+}
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter:hover .sapMITBText{
+	color: #ffffff;
+}
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter.sapMITBSelected{
+	background:#4366a6;
+	opacity: 1;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter.sapMITBSelected .sapMITBContentArrow{
+	border: none;
+}
+
+.tabMab .sapMITH .sapMITBHead .sapMITBFilter.sapMITBSelected .sapMITBText{
+
+
+
+	color: #ffffff;
+
+}
+
+.sapMITBContainerContent{
+	border: solid 1px  #bfcc4e;
+	box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+
+
+
+
+
+}
+
+.tabMab .panelBlue .sapMPanel>.sapMPanelHdr, .tabMab .panelBlue .sapMPanelWrappingDiv, .tabMab .sapMPanelWrappingDivTb {
+    height: 54px;
+    vertical-align: middle;
+    background: #ffffff;
+    font-weight: bold;
+}
+
+.tabMab .tinyTitle {
+	padding-top: 13px;
+}
+
+.tabMab .sapMPanelExpandableIcon {
+    color: #2a5095;
+    outline: 0 !important;
+}
+
+/*_________________END TABMAB________________*/
+
+
+
+
+
+
+/* ---------ELEMENT BLOQUETOTALES--------*/
+
+	.totalBlock {
+		background-color: rgba(200, 200, 200, 0.45);
+		border-radius: 4px;
+	}
+	.cssTotalAzulOscuro {
+			color:rgb(76,114,176) !important; /*Azul oscuro*/
+			font-weight:50;
+			font-size: 1.5rem;
+			font-family: SourceSansPro-Bold;
+	}
+	.cssTotalAzulClaro {
+			color: #4485c9 !important; /*Azul claro*/
+			font-weight:50;
+			font-size: 1.5rem;
+			font-family: SourceSansPro-Bold;
+	}
+/*_________ END ELEMENT PANELBLUE ___________*/
+	
+/*---------ELEMENT PANELBLUE --------*/
+	.panelBlue.sapMPanel {
+		box-shadow : 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+		border-radius : 4px;
+	}
+
+	.panelBlue .numberBold.sapMText{
+		font-weight:bold;
+		font-family: SourceSansPro-Semibold;
+		color:#4485c9; /*Azul*/
+		font-size: 18px;
+	}
+
+	.panelBlue.sapUiTinyMarginTop.boldText.textAlignRight{
+		padding-left: 10px;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+	
+	.panelBlue .sapMPanel>.sapMPanelHdr, .panelBlue .sapMPanelWrappingDiv, .panelBlue .sapMPanelWrappingDivTb{
+		height: 54px;
+		vertical-align:middle;
+		background: rgb(76,114,176);
+		font-weight:bold;
+		color: #ffffff;
+	}
+	
+	.panelBlue.sapMIBar.sapMTB.sapMTB-Transparent-CTX.sapMTBInactive.sapMTBNewFlex{
+		background: rgb(76,114,176);
+		height: 54px;
+	}
+	
+	.panelBlue .sapMTB-Transparent-CTX .sapMText{
+		font-weight: 600;
+		color: #ffffff;
+		text-shadow:none;
+		font-family: SourceSansPro-Light;
+		font-size: 14px;
+	}
+	
+	.panelBlue .sapMPanelExpandableIcon {
+	    color:  #ffffff;
+	    outline: 0 !important;
+	}
+
+	.panelBlue .cssTotalPanelAzul {
+			color:rgb(76,114,176) !important; /*Azul*/
+			font-weight:50;
+			font-size: 1.5rem;
+			font-family: SourceSansPro-Bold;
+	}
+	
+	.panelBlue .sapMListNoData {
+	    color: #515151;
+	    background-color: #ffffff;
+	    border-bottom: none;
+	    padding: 20px 10px;
+
+	}
+	
+	.panelBlue .sapMListNoData .sapMtext {
+	    font-size:14px;
+	    font-family: SourceSansPro-Italic;
+	}
+	
+	.panelBlue .sapMCLI.sapMLIB.sapMLIB-CTX.sapMLIBFocusable.sapMLIBShowSeparator.sapMLIBTypeInactive .sapMtext {
+	    font-size:14px;
+	}
+
+	.panelBlue .sapMPanelContent {
+	    padding:0px;
+	    box-sizing: border-box;
+	    background-color: #dee2e7;
+	    overflow: visible;
+	}
+	
+	.panelBlue  .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxBGTransparent.sapMFlexBoxJustifySpaceBetween.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMHBox.sapUiTinyMargin{
+		background: #dee2e7;
+		padding: 0 8px;
+	}
+
+	.panelBlue .borderRightWhite.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsCenter.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMFlexItem.sapMVBox.sapUiTinyMargin{
+		padding-right: 35px;
+		padding-left: 5px;
+	}
+
+	.panelBlue .sapMListNoDataText {
+	    overflow: visible;
+	    overflow-x: visible;
+	    overflow-y: visible;
+	    text-overflow: ellipsis;
+	    white-space: normal; 
+	    padding-bottom: 32px;
+    	padding-top: 32px;
+	}
+	
+	.panelBlue .sapMListNoData {
+    	height: auto;
+    	padding: 20px;
+	}
+	
+	.panelBlue .sapMCLI.sapMLIB {
+    	padding: 3px 5px;
+	}
+	
+	.panelBlue  .sapMTitleStyleAuto {
+    	font-size: 25px;
+    	font-size: 600;
+    	font-family: SourceSansPro-Semibold;
+    	color:#515151;
+    	/*padding-left: 80px;                                CAMBIO JAVI PARA TLS 05/09/2016                 */
+    	padding-top: 7px;
+	}
+	
+	.panelBlue .sapMBtn .sapMBtnIcon {
+	    cursor: inherit;
+	    /*text-align: -webkit-right;*/
+	    text-align: left;
+	    padding-left: 5px;
+	}
+/*_________ END ELEMENT PANELBLUE ___________*/
+
+
+
+
+
+
+
+
+
+
+.sapUiCalWeekNum { display : none }
+
+.sapUiCalMonthView .sapUiCalFirstWDay { margin-left: 6.25%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------ CALENDAR SAPUI5 -------------*/
+
+
+	.sapUiCalHead>.sapUiCalHeadB, .sapUiCalCancel, html.sap-desktop .sapUiCalHead>.sapUiCalHeadB:hover, html.sap-desktop .sapUiCalHead>.sapUiCalHeadB:focus {
+    	color:#666666 !important;
+		font-weight:bold;
+		background:#ffffff;
+	}
+
+	
+	.sapUiCalHead>.sapUiCalHeadB:hover{
+		color:#666666 !important;
+		font-weight:bold;
+		background:#ffffff;
+	}
+	
+	.sapUiCalItemNow>.sapUiCalItemText {
+		border: 0.125rem solid #808d11 !important;
+    	line-height: 2.6875rem;
+	}
+	
+	.sapUiCalItemText:hover {
+		background:#808d11 !important;
+	}
+	.sapUiCalItemText:active {
+		background:#808d11 !important;
+		outline:0 !important;
+	}
+	.sapUiCalItemText:focus {
+		background:#808d11 !important;
+		outline:0 !important;
+	}
+	
+	.sapUiCal.sapUiShd {
+    	border: 0.0625rem solid #808d11 !important;
+	}
+	
+	.sapUiCal[data-sap-ui-popup] {
+    	border: 1px solid #bfcc4e !important;
+    	box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.5);
+	}
+	
+
+	.calendarTable .sapUiCalHead>.sapUiCalHeadB{
+		color:#666666;
+		font-weight:bold;
+		background:#ffffff;
+	}
+	
+	.calendarTable .sapUiCalHead>.sapUiCalHeadB:hover{
+		color:#666666;
+		font-weight:bold;
+		background:#ffffff;
+	}
+	
+	.calendarTable .sapUiCalItemNow>.sapUiCalItemText {
+		border: 0.125rem solid #808d11;
+    	line-height: 2.6875rem;
+	}
+	
+	.calendarTable .sapUiCalItemText:hover {
+		background:#808d11;
+	}
+	.calendarTable .sapUiCalItemText:active {
+		background:#808d11;
+		outline:0 !important;
+	}
+	.calendarTable .sapUiCalItemText:focus {
+		background:#808d11;
+		outline:0 !important;
+	}
+	
+	.margin0.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1{
+		padding: 0;
+		margin-left: -20px;
+		margin-right: -8px;
+		margin-top: 31px;
+	}
+/*__________ END CALENDAR SAPUI5 ______________*/
+
+
+
+
+
+
+
+
+
+
+/*------------- ELEMENT NEW CALENDAR --------------------*/
+.calendarHead{
+	justify-content: flex-start;
+    background-color:#ffffff !important;
+    height: auto;
+    border-radius:.23rem;
+}
+
+.calendarHead .sapUiIcon:before{
+	color:#666666;
+}
+
+.calendarHead  .sapMLabel{
+	color:#666666;
+}
+
+.calendarHead .alignRight.formatCenter.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMHBox{
+	justify-content: center; 
+/*	margin-left: 7.5rem;*/
+}
+
+.calendarHead .sapMLnk{
+	width: 100%;
+    margin-right: 5rem;
+    padding: 0.93rem 0 0 0;
+    justify-content: flex-end;
+} 
+
+.calendarTable {
+	background:#ffffff;
+}
+
+.calendarTable .boldText{
+	font-weight:bold;
+	font-family: SourceSansPro-Bold;
+	color: #515151;;
+}
+
+.calendarTable .sapMListTbl th {
+    /*border-bottom: 2px solid #dbdfe5;*/
+    border-top: 2px solid #dbdfe5;
+    background: #ffffff;
+    font-weight:bold;
+    font-size:0.9rem;
+    margin: 0 1.875rem;
+}
+
+.calendarTable .sapMBtnDefault.sapMBtnInner.sapMBtnText{
+ 	border: none;
+ 	background: transparent;
+ 	box-shadow: none ;
+ 	color: #666666;
+ 	font-size:1.2rem;
+    height: 50px;
+    width: 41px;
+    padding: 12px 0px 0px 0px;
+    margin: -19px 0px 0 0;
+}
+
+
+.calendarTable .sapMITBScrollContainer{
+	text-align: right;
+    margin: -34px 0 0 0;
+}
+
+
+.calendarTable .sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMVBox{
+	    text-align: end;
+}
+
+.calendarTable  .sapMLIBShowSeparator>td{
+	    border: 0.2px solid #e0e0e0;
+}
+
+.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridVSpace1 .sapUiRespGridSpanL10.sapUiRespGridSpanM10.sapUiRespGridSpanS12.sapUiRespGridSpanXL10{
+	    text-align: end;
+}
+
+.calendarTable .boldText.sapMLabel.sapMLabelMaxWidth.sapUiSelectable{
+	font-size: 15px;
+}
+
+.calendarTable .sapMIBar.sapMListHdrTBar.sapMTB.sapMTB-Transparent-CTX.sapMTBInactive.sapMTBNewFlex{
+ height: 60px;
+ border:none;
+}
+
+.calendarTable .sapMBarChild.sapMFlexBox.sapMFlexBoxAlignContentStretch.sapMFlexBoxAlignItemsStretch.sapMFlexBoxBGTransparent.sapMFlexBoxJustifyStart.sapMFlexBoxWrapNoWrap.sapMHBox.textAlignRight.sapMTBShrinkItem{
+	justify-content: flex-end;
+}
+
+.calendarChange {
+	border-bottom: solid 4px #bfcc4e;
+    font-family: SourceSansPro-Bold;
+    opacity: 1;
+}
+
+.calendarTable .sapMListTblCell.sapMListTblCellNoData, .sapMListTblRow>:nth-last-child(2) {
+	padding-right: 0 !important; 
+}
+.calendarTable .sapMListTblHighlightCol + .sapMListTblHeaderCell, .calendarTable .sapMListTblHighlightCell + .sapMListTblCell {
+	padding-left: 0 !important;
+}
+/*.calendarTable .sapMLnk:focus {
+    color: #2a5095;
+    outline:0 !important;
+    border-bottom: solid 2px #bfcc4e;
+    font-family: SourceSansPro-Bold;
+}*/
+
+/*.calendarTable .padding20.sapMLnk:focus.sapMLnkMaxWidth{
+	border-bottom: solid 2px #bfcc4e; 					CAMBIO JAVI 10/11/2016 ---> SE HACE POR JAVASCRIPT
+}*/
+/*___________ END  ELEMENT NEW CALENDAR ____________________*/
+
+
+
+
+
+
+
+
+
+/*------ TIMELINE SUITE -------------*/
+.customTimeline .sapSuiteUiCommonsTimelineItemShellHdr {
+	font-weight:bold;
+	font-family: SourceSansPro-Bold;
+	color: #59656f;
+}
+
+.customTimeline .sapSuiteUiCommonsTimelineItemBox {
+	width: 75%;
+}
+/*__________ END TIMELINE SUITE ______________*/
+
+
+
+
+
+/*---------------- MENU BAR --------------------*/
+.menuBar{
+	background: #4485c9;
+}
+
+.menuBar.sapTntSideNavigation.sapTntSideNavigationNotExpanded.sapTntSideNavigationNotExpandedWidth{
+	background: #4485c9;
+}
+
+.menuBar .sapTntNavLIGroup.sapTntNavLIItem{
+	background: #4485c9;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.menuBar .sapTntNavLIGroup>.sapUiIcon{
+	color: #ffffff;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.menuBar .sapTntNavLIItemSelected .sapTntNavLIGroup>.sapUiIcon {
+	color: #ffffff; 
+	background: #4366a6;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.menuBar .sapTntNavLIGroup:not(.sapTntNavLIItemDisabled):hover>.sapUiIcon{
+	color: #ffffff; 
+	background: #4366a6;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.menuBar .sapMText{
+	color:#ffffff;
+}
+
+.menuBar .sapTntNavLIItemSelected .sapTntNavLIGroup{
+	color: #ffffff; 
+	background: #4366a6;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.menuBar .sapTntNavLIItemSelected .sapTntNavLIGroup:hover{
+	color: #ffffff; 
+	background: #4366a6;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.menuBar .sapTntNavLIGroup:not(.sapTntNavLIItemDisabled):hover {
+    background: #4366a6;
+    border-bottom: 1px solid #e5e5e5;
+    color: #333333;
+}
+
+.menuBar .sapTntSideNavigationVerticalScrolling { /*JPM act. versión*/
+	 height: 0rem!important;
+}
+
+/*__________________END MENU BAR _________________*/
+
+
+
+/*----------- GENERAL POPUP -------------------*/
+.sapMPopover.sapUiContentPadding>.sapMPopoverCont>.sapMPopoverScroll {
+    /*    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #bfcc4e;						CAMBIO JOSE EXPENSES 15/09/2016 */
+
+}
+
+.sapMPopoverArrUp:before, .sapMPopoverArrDown:before{
+	/*border-top: 1px solid #bfcc4e;
+	border-left: 1px solid #bfcc4e;                                CAMBIO JAVI TLs 06/09/2016*/
+}
+
+.sapMDialog{
+	border: 1px solid #bfcc4e;
+	overflow: hidden;
+}
+
+/*_____________ END GENERAL POPUP ______________*/
+
+/*-----------------POP UP--------------------------*/
+.popup .sapMDialogTitle {
+	background-color: #f1f1f1 !important;
+}
+
+.popup .sapMFooter-CTX {
+	background-color: white !important;
+	border-top: none !important;
+}
+.popup .sapMLabel {
+    font-weight: 600;
+    color: #515151;
+    font-family: SourceSansPro-Bold;
+    overflow: visible;
+    font-size: 14px
+}
+
+.popup	.tableBlue .sapMIBar .sapMTitle{
+		background: #ffffff;
+		font-weight: 600;
+		color: #515151;
+	 font-family: SourceSansPro-Bold;
+	 margin-bottom: 10px;
+}
+
+.popup .tableBlue .sapMTB-Transparent-CTX.sapMTB {
+    padding-left: 0;
+}
+
+.popup.sapUiCal[data-sap-ui-popup] {
+    border: 2px solid #bfcc4e;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.5);
+}
+
+.popup .btnPaginator.paddingTableGrey{
+	padding-right:0;
+}
+
+.popup	.tableBlue .sapMIBar {
+		background: #ffffff;
+		font-weight: 600;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+}
+	
+
+
+/*________________END POP UP___________________________*/
+
+
+/*-----------------POP UP 1--------------------------*/
+.popup1 .sapMIBar{  /*-----------------------------------------CAMBIO PARA TLs 13/09/2016*/
+	padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    background: #ffffff;
+}
+
+.popup1 .sapMPanelBGTranslucent.sapMPanelContent{
+	padding-left: 30px;
+}
+
+.popup1 .sapMTitle{
+	font-family:SourceSansPro-Semibold;
+	font-size:18px;
+}
+
+.popup1 .sapMLabel {
+    color: #666666;
+    font-size: 0.875rem;
+    font-family: SourceSansPro-Bold;
+}
+
+.popup1 .sapMListTbl th {
+    border: none;
+    background: transparent;
+    padding-top: 21px;
+    height: 16px;
+}
+
+.popup1 .sapMListTbl .sapMListTblRow.sapMListTblHeader .sapMText{
+	 color: #666666;
+    font-size: 0.875rem;
+    font-family: SourceSansPro-Bold;
+}
+
+
+.popup1 .sapMListModeNone.sapMListShowSeparatorsNone.sapMListTbl.sapMListUl{
+	margin-left:-15px;
+	margin-right:-15px;
+}
+/*________________END POP UP___________________________*/
+
+
+
+
+
+/*-----------------POP UP 2--------------------------*/
+.popup2 .sapMTitle {
+    /*padding-left: 30px;---------------------------------CAMBIO JAVI PARA TLS 13/09/2016*/
+    font-family: SourceSansPro-Semibold;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 22px;
+}
+
+.popup2 .sapMText{
+	/*padding-left: 70px;---------------------------------CAMBIO JAVI PARA TLS 13/09/2016*/
+    font-family: SourceSansPro-Light;
+    font-weight:600;
+    padding-bottom: 18px;
+    font-size: 15px;
+}
+
+.popup2 .sapMFlexItem{
+	text-align:center;
+}
+
+.popup2 .btnBorderBlue{
+	margin-left:5px;
+}
+ .popup2 .btnGreen{
+ }
+/*________________END POP UP 2___________________________*/
+
+
+
+
+
+
+
+/*-----------------POP UP 3--------------------------*/
+.popup3 .sapMLabel {
+    font-weight: 600;
+    color: #515151;
+    font-family: SourceSansPro-Bold;
+    overflow: visible;
+    font-size: 16px
+}
+
+.popup3	.tableBlue .sapMIBar .sapMTitle{
+		background: #ffffff;
+		font-weight: 600;
+		color: #515151;
+	 font-family: SourceSansPro-Bold;
+	 margin-bottom: 10px;
+}
+
+.popup3 .tableBlue .sapMTB-Transparent-CTX.sapMTB {
+    padding-left: 0;
+}
+
+.popup3.sapUiCal[data-sap-ui-popup] {
+    border: 2px solid #bfcc4e;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.5);
+}
+
+.popup3 .btnPaginator.paddingTableGrey{
+	padding-right:0;
+}
+
+.popup3	.tableBlue .sapMIBar {
+		background: #ffffff;
+		font-weight: 600;
+		/*font-family: SourceSansPro-Light, Arial, Helvetica;*/ font-family: SourceSansPro-Light;
+}
+	
+
+
+/*________________END POP UP 3___________________________*/
+
+
+
+/*-----------------POP UP 4--------------------------*/
+
+.popup4 .sapMLabel {
+    font-weight: 600;
+    color: #666666;
+    font-family: SourceSansPro-Semibold;
+    overflow: visible;
+}
+
+.popup4 .sapMInputValHelpInner {
+    speak: none;
+    color: #bfcc4e;
+}
+
+.popup4 .sapUiIcon:before{
+    speak: none;
+    color: #bfcc4e;
+}
+
+.popup4 .sapMText{
+	font-weight: 600;
+    color: #4485c9;
+    font-family: SourceSansPro-Bold;
+    padding:10px;
+}
+
+.popup4 .cssCalculatePerDiem {
+    box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+    border-radius: 4px;
+}
+.popup4 .cssCalculatePerDiem .sapMText {
+	padding: 1px;
+}
+.popup4 .cssCalculatePerDiem .sapMIBar {
+    padding: 27px;
+}
+.popup4 .cssCalculatePerDiem .sapMLabel {
+	font-size: 64px;
+	color: #4485c9;
+}
+.popup4 .cssCalculatePerDiem .sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border: 1px solid #dddddd;
+}
+
+.popup4 .boxSelectPerDiemCalculation .sapMLabel {
+	font-size: 18px;
+	font-family: SourceSansPro-Bold;
+	color: rgb(76,114,176);
+}
+
+.popup4 .boxSelectPerDiemCalculation .sapMText {
+	font-size: 16px;
+	font-family: SourceSansPro-SemiBold;
+}
+/*________________END POP UP 4___________________________*/
+
+/*-----------------TOOLBAR--------------------------*/
+
+.toolbarNoPadding.sapMTB-Transparent-CTX.sapMTB {
+	padding-left: 0;
+}
+
+/*________________END TOOLBAR___________________________*/
+
+
+
+/*---------------------COMMON-----------------------*/
+.setPointer {
+	cursor: pointer;
+}
+/*________________END COMMON___________________________*/
+
+/*---------------------BORDER AND PADDING-----------------------*/
+
+.borderTopGrey {
+	border-top: solid 1px #dbdfe5;
+	padding-top: 1rem !important;
+}
+
+
+/*________________END BORDER AND PADDING________________________*/
+.footerTableExpenses {
+	background-color: white;
+    padding: 14px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: 3px 4px 4px 1px rgba(171, 171, 171, 0.54);
+}
+
+/*---------------------STATUS TEXT COLOR-----------------------*/
+
+.statusTextGreen{
+	border: solid 2px #808d11;
+	border-radius: 4px;
+}
+
+.statusTextGreen .sapMText{
+	color:#808d11 !important;
+	font-weight:bold !important;
+	font-family: SourceSansPro-Bold !important;
+	margin: 0 2px 2px 2px !important;
+}
+
+.statusTextGrey{
+	border: solid 2px #666666;
+	border-radius: 4px;
+}
+
+.statusTextGrey .sapMText{
+	color:  #666666 !important;
+	font-weight:bold !important;
+	font-family: SourceSansPro-Bold !important;
+	margin: 0 2px 2px 2px !important;
+}
+
+/*________________END STATUS TEXT COLOR________________________*/
+
+
+/*---------------------MENU OVERFLOW-----------------------*/
+/* Esta clase consigue que el menu flote por encima de la pantalla cuando se abre */
+/* PROBLEMA: El width fijo que tiene, que es igual al que le pone el componenete SideNavigation con el menú plegado */
+
+.menuZIndex{
+	z-index:99999;
+	width:3em;
+}
+
+/*---------------------END MENU OVERFLOW-----------------------*/
+
+/*PHONE*/
+
+.phoneMargin0{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.phoneTitle{
+	width: 100%;
+    margin-left: 23px;
+}
+
+.backgroundSpace3>.sapMFlexItem:first-child{
+	text-align: center;
+}
+
+.backgroundSpace3 th:first-child{
+	width:25% !important;
+}
+.backgroundSpace3 th:nth-child(2){
+	width:35% !important;
+}
+.backgroundSpace3 th:nth-child(3){
+	width:15% !important;
+}
+.backgroundSpace3 th:nth-child(4){
+	width:15% !important;
+}
+
+.backgroundSpace3{
+	padding:0 !important;
+}
+
+.backgroundSpace1{
+	padding:0 !important;
+}
+.sapMBtnIcon {
+    font-size: 15px;
+}
+
+/*.hoursInput {*/
+/*    width: 70px !important;*/
+/*}*/
+
+.phoneGPanel.sapMPanel>.sapMPanelWrappingDiv{
+	background-color: #4366a6;
+}
+.phoneGPanel.sapMPanel>.sapMPanelWrappingDiv>.sapUiIcon{
+	color: white;
+    text-shadow: 1px 1px black;
+}
+.phoneGPanel.sapMPanel>.sapMPanelWrappingDiv>.sapMPanelHdr{
+	color: white;
+    text-shadow: 1px 1px black;
+}
+.Row .sapMPanelHdr{
+	color: #000000 !important;
+	font-size:14px;
+}
+
+.phoneGPanel>.sapMPanelBGTranslucent.sapMPanelContent.sapMPanelExpandablePart{
+	padding:0;
+}
+
+.phoneGPanel .sapMFlexItem>.sapMList.sapMListBGTranslucent.sapMListTblCnt.tableCardView{
+	margin:0;
+}
+
+.backgroundSpace1.backgroundSpace1Breadcrumbs>.sapUiRespGridSpanL9.sapUiRespGridSpanM9.sapUiRespGridSpanS12.sapUiRespGridSpanXL9{
+	margin-bottom:0;
+}
+.summaryToolbarS{
+	flex:initial;
+	width:65px;
+}
+
+.hoursSummary{
+	padding:0;
+}
+
+.phonevboxAS .sapUiRespGridMedia-Std-Phone.sapUiRespGridHSpace05>.sapUiRespGridSpanS12:nth-child(4){
+	text-align:center;
+}
+.phonevboxAS .sapUiRespGridMedia-Std-Phone.sapUiRespGridHSpace05>.sapUiRespGridSpanS12:nth-child(5){
+	text-align:center;
+}
+
+.tableCreateTemplate thead>tr>.sapMListTblNavCol{
+	padding:0;
+	height:0;
+}
+
+.sapMBreadcrumbs{
+	margin-left: 10px;
+}
+
+.phoneCalendarHoursDay span{
+	font-size:24px !important;
+}
+
+.whiteSpace>span{
+	    white-space: initial !important;
+}
+
+.backgroundSpaceWhite>.sapMFlexItem:nth-child(3)>.backgroundSpace2>.sapUiRespGridSpanS12:nth-child(4)>.sapMFlexBox>.sapMFlexItem{
+	text-align:center;
+}
+
+/*------ SEARCHFIELD ERROR CLASS -------------*/
+
+.searchFieldError .sapMSFF{
+	background: #ffffff !important;
+	border: 2px solid #ee0000 !important;
+}
+
+/*__________ END SEARCHFIELD ERROR CLASS ______________*/
+
+/*------ LIST -------------*/
+
+.sapMLIBFocusable:not(.sapMLIBNativeOutline):focus {
+	outline: none;
+}
+
+html.sap-desktop .sapMListTblRow:focus {
+	outline: none !important;
+}
+
+/*------ END LIST -------------*/
+
+
+/** Estilos para los paneles en el popover de imputación de dias **/
+.panelDay .sapMPanelContent {
+	padding: 0.5rem !important;
+}
+
+.panelDay .sapMPanelContent:not(.sapMPanelBGTransparent) {
+	border: 1px solid #dddddd !important;
+}
+
+.panelDay .sapMPanelWrappingDivTb{
+	border: 1px solid #dddddd !important;
+	background-color: #F7F7F7 !important;
+}
+
+/** -------------------------- END  ---------------------------**/
